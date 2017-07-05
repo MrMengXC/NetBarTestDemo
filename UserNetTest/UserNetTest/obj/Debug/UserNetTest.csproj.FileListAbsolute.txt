@@ -42,3 +42,17 @@ C:\Users\Administrator\Desktop\NetBarClient\UserNetTest\UserNetTest\bin\Debug\Go
 C:\Users\Administrator\Desktop\NetBarClient\UserNetTest\UserNetTest\obj\Debug\UserNetTest.Forms.LoginForm.resources
 C:\Users\Administrator\Desktop\NetBarClient\UserNetTest\UserNetTest\obj\Debug\UserNetTest.exe.licenses
 C:\Users\Administrator\Desktop\NetBarClient\UserNetTest\UserNetTest\obj\Debug\UserNetTest.Forms.PreChargeForm.resources
+C:\Users\Administrator\Desktop\GitHub\NetBarTestDemo\UserNetTest\UserNetTest\obj\Debug\UserNetTest.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\GitHub\NetBarTestDemo\UserNetTest\UserNetTest\obj\Debug\UserNetTest.Form1.resources
+C:\Users\Administrator\Desktop\GitHub\NetBarTestDemo\UserNetTest\UserNetTest\obj\Debug\UserNetTest.Forms.LoginForm.resources
+C:\Users\Administrator\Desktop\GitHub\NetBarTestDemo\UserNetTest\UserNetTest\obj\Debug\UserNetTest.Forms.PreChargeForm.resources
+C:\Users\Administrator\Desktop\GitHub\NetBarTestDemo\UserNetTest\UserNetTest\obj\Debug\UserNetTest.Properties.Resources.resources
+C:\Users\Administrator\Desktop\GitHub\NetBarTestDemo\UserNetTest\UserNetTest\obj\Debug\UserNetTest.csproj.GenerateResource.Cache
+C:\Users\Administrator\Desktop\GitHub\NetBarTestDemo\UserNetTest\UserNetTest\obj\Debug\UserNetTest.exe.licenses
+C:\Users\Administrator\Desktop\GitHub\NetBarTestDemo\UserNetTest\UserNetTest\obj\Debug\UserNetTest.exe
+C:\Users\Administrator\Desktop\GitHub\NetBarTestDemo\UserNetTest\UserNetTest\obj\Debug\UserNetTest.pdb
+C:\Users\Administrator\Desktop\GitHub\NetBarTestDemo\UserNetTest\UserNetTest\bin\Debug\Plugins\Google.ProtocolBuffers.dll
+C:\Users\Administrator\Desktop\GitHub\NetBarTestDemo\UserNetTest\UserNetTest\bin\Debug\UserNetTest.exe.config
+C:\Users\Administrator\Desktop\GitHub\NetBarTestDemo\UserNetTest\UserNetTest\bin\Debug\UserNetTest.exe
+C:\Users\Administrator\Desktop\GitHub\NetBarTestDemo\UserNetTest\UserNetTest\bin\Debug\UserNetTest.pdb
+C:\Users\Administrator\Desktop\GitHub\NetBarTestDemo\UserNetTest\UserNetTest\bin\Debug\Google.ProtocolBuffers.dll

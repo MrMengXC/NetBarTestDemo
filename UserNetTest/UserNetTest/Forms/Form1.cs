@@ -143,6 +143,7 @@ namespace UserNetTest
             COM_STATUS status = model.status;
 
             this.cardLabel.Text = "";
+            this.MessageLabel.Text = "";
             this.panel4.Controls.Clear();
             switch (status)
             {
@@ -175,6 +176,7 @@ namespace UserNetTest
                         SimpleButton close = this.InitOpenButton("关机", CloseComputer);
                         this.panel4.Controls.Add(close);
                         this.cardLabel.Text = model.card;
+                        this.MessageLabel.Text = "已扣金额 " + model.usebalance + " 元";
                     }
                     break;
 
@@ -308,6 +310,7 @@ namespace UserNetTest
                 GetSysMessage(model.manage);
                 //输入身份证号
                 model.card = text;
+                model.usebalance = 0;
                 ClientNetOperation.UpComputer(model.manage, text, UpComputerResult);
             });
             LoginForm form = new LoginForm(login);
@@ -355,7 +358,7 @@ namespace UserNetTest
         #region 获取系统信息反馈
         private void GetSysMessage(NetMessageManage manage)
         {
-
+            manage.RemoveResultBlock(GetSysMessageResult);
             manage.AddResultBlock(GetSysMessageResult);
         }
         //获取系统信息反馈结果回调
@@ -366,18 +369,31 @@ namespace UserNetTest
             {
                 return;
             }
-            //SimpleModel model = this.GetModel(result.index);
-            //model.manage.RemoveResultBlock(UpComputerResult);
+            SimpleModel model = this.GetModel(result.index);
             System.Console.WriteLine("GetSysMessageResult:" + result.pack);
 
             if (result.pack.Content.MessageType == 1)
             {
                 
                 SCSysMessage message = result.pack.Content.ScSysMessage;
-                if(message.Cmd == 1)
+                IList<string> paramslist = message.ParamsList;
+
+                if (message.Cmd == 6)
                 {
-                    IList<string> paramslist = message.ParamsList;
+                    int blance = int.Parse(message.ParamsList[2]);
                     //扣费时间    下次扣费时间    扣费金额
+                    model.usebalance += blance;
+                    this.Invoke(new UIHandleBlock(delegate
+                    {
+                        //判断是否是当前按钮，是的话当前按钮可以进行的操作
+                        SimpleButton button = (SimpleButton)this.panel1.Controls[result.index];
+                        if (button.Equals(this.selectButton))
+                        {
+                            this.MessageLabel.Text = "已扣金额 " + model.usebalance + " 元";
+                        }
+
+
+                    }));
 
                 }
                 else if(message.Cmd == 2)
@@ -385,12 +401,7 @@ namespace UserNetTest
 
                 }
 
-                this.Invoke(new UIHandleBlock(delegate
-                {
-                    //赋值SimpleModel
-
-
-                }));
+              
             }
             else
             {
@@ -405,6 +416,8 @@ namespace UserNetTest
         {
             int index = this.panel1.Controls.GetChildIndex(this.selectButton);
             SimpleModel model = this.GetModel(index);
+            //model.manage.RemoveResultBlock
+
             ClientNetOperation.DownComputer(model.manage, model.card, DownComputerResult);
         }
         //下机回调
@@ -489,8 +502,8 @@ namespace UserNetTest
         public NetMessageManage manage;
         public COM_STATUS status;               
         public string card;                     //身份证号
-        public string ip;
-        public SCSysMessage message;
+        public string ip;                       //所使用的IP
+        public int usebalance;                  //使用的费用
     }
     #endregion
 
