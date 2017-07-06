@@ -10,8 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using UserNetTest.Forms;
 using UserNetTest.Tools;
-using static UserNetTest.Tools.NetMessageManage;
-
+ 
 namespace UserNetTest
 {
     public enum COM_STATUS

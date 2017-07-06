@@ -10,10 +10,10 @@ namespace UserNetTest.Tools
     {
 
         #region 打开电脑
-        public static void OpenComputer(NetMessageManage manage,string ip,NetMessageManage.DataResultBlock resultBlock)
+        public static void OpenComputer(NetMessageManage manage,string ip,DataResultBlock resultBlock)
         {
             //连接服务器
-            NetMessageManage.ConnectResultBlock result = new NetMessageManage.ConnectResultBlock(delegate {
+            ConnectResultBlock result = new ConnectResultBlock(delegate {
 
                 //请求服务器开机
 
@@ -45,7 +45,7 @@ namespace UserNetTest.Tools
         #endregion
 
         #region 关闭电脑
-        public static void CloseComputer(NetMessageManage manage, NetMessageManage.DataResultBlock resultBlock)
+        public static void CloseComputer(NetMessageManage manage, DataResultBlock resultBlock)
         {
             CSClientClose.Builder close = new CSClientClose.Builder();
             MessageContent.Builder content = new MessageContent.Builder()
@@ -64,7 +64,7 @@ namespace UserNetTest.Tools
         #endregion
 
         #region 用户上机
-        public static void UpComputer(NetMessageManage manage,String card, NetMessageManage.DataResultBlock resultBlock)
+        public static void UpComputer(NetMessageManage manage,String card,DataResultBlock resultBlock)
         {
             CSLogon.Builder logon = new CSLogon.Builder()
             {
@@ -85,7 +85,7 @@ namespace UserNetTest.Tools
         #endregion
 
         #region 用户下机
-        public static void DownComputer(NetMessageManage manage, String card, NetMessageManage.DataResultBlock resultBlock)
+        public static void DownComputer(NetMessageManage manage, String card,DataResultBlock resultBlock)
         {
             CSLogoff.Builder off = new CSLogoff.Builder()
             {
@@ -109,7 +109,7 @@ namespace UserNetTest.Tools
 
         #region 用户充值
         //用户预充值 获取充值二维码
-        public static void UserPreCharge(NetMessageManage manage, String card, NetMessageManage.DataResultBlock resultBlock,int amount)
+        public static void UserPreCharge(NetMessageManage manage, String card, DataResultBlock resultBlock,int amount)
         {
             CSPreCharge.Builder charge = new CSPreCharge.Builder()
             {
@@ -131,7 +131,7 @@ namespace UserNetTest.Tools
             manage.SendMsg(pack.Build(), resultBlock);
         }
         //获取充值结果
-        public static void UserRecharge(NetMessageManage manage, NetMessageManage.DataResultBlock resultBlock)
+        public static void UserRecharge(NetMessageManage manage, DataResultBlock resultBlock)
         {           
              
             MessagePack.Builder pack = new MessagePack.Builder()
@@ -145,7 +145,7 @@ namespace UserNetTest.Tools
 
         #region 获取系统消息反馈
         //获取系统消息
-        public static void GetSysMessage(NetMessageManage manage, NetMessageManage.DataResultBlock resultBlock)
+        public static void GetSysMessage(NetMessageManage manage, DataResultBlock resultBlock)
         {
             MessagePack.Builder pack = new MessagePack.Builder();
             pack.Cmd = Cmd.CMD_CLIENT_SYSMESSAGE;

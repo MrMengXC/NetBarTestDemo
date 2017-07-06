@@ -13,6 +13,13 @@ using UserNetTest.Tools;
 
 namespace UserNetTest.Tools
 {
+    //UI回调代理
+    public delegate void UIHandleBlock();
+    // 连接结果回调
+    public delegate void ConnectResultBlock();
+    // 接受回调代理
+    public delegate void DataResultBlock(ResultModel result);
+
     public class NetMessageManage
     {
         public int index;
@@ -22,16 +29,13 @@ namespace UserNetTest.Tools
         private const int port = 8465;
 
         #region
-        // 接受回调代理
-        public delegate void DataResultBlock(ResultModel result);
+       
         public event DataResultBlock ResultBlockHandle;
 
-        // 连接结果回调
-        public delegate void ConnectResultBlock();
+       
         public event ConnectResultBlock ConnectBlockHandle;
         
-        //UI回调代理
-        public delegate void UIHandleBlock();
+       
         #endregion
 
         public NetMessageManage(int tem)
