@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using UserNetTest.Forms;
 using UserNetTest.Tools;
- 
+
 namespace UserNetTest
 {
     public enum COM_STATUS
@@ -174,6 +174,12 @@ namespace UserNetTest
                         this.panel4.Controls.Add(pay);
                         SimpleButton close = this.InitOpenButton("关机", CloseComputer);
                         this.panel4.Controls.Add(close);
+                        SimpleButton call = this.InitOpenButton("呼叫服务", CallServer);
+                        this.panel4.Controls.Add(call);
+
+                        SimpleButton buy = this.InitOpenButton("购买", Purchase);
+                        this.panel4.Controls.Add(buy);
+
                         this.cardLabel.Text = model.card;
                         this.MessageLabel.Text = "已扣金额 " + model.usebalance + " 元";
                     }
@@ -229,6 +235,8 @@ namespace UserNetTest
                
                 this.Invoke(new UIHandleBlock(delegate
                 {
+                    //获取信息回调
+                    GetSysMessage(model.manage);
                     //成功回调
                     model.status = COM_STATUS.OPEN_STATUS;
                     //判断是否是当前按钮，是的话当前按钮可以进行的操作
@@ -271,6 +279,8 @@ namespace UserNetTest
 
             if (result.pack.Content.MessageType == 1)
             {
+                //移除系统消息通知
+                RemoveSysMessage(model.manage);
                 //关闭服务器连接
                 model.manage.CloseServerConnect();
                 this.Invoke(new UIHandleBlock(delegate
@@ -305,8 +315,7 @@ namespace UserNetTest
             LoginForm.LoginResultHandle login = new LoginForm.LoginResultHandle(delegate (string text) {
                 int index = this.panel1.Controls.GetChildIndex(this.selectButton);
                 SimpleModel model = this.GetModel(index);
-                //获取信息回调
-                GetSysMessage(model.manage);
+            
                 //输入身份证号
                 model.card = text;
                 model.usebalance = 0;
@@ -360,6 +369,11 @@ namespace UserNetTest
             manage.RemoveResultBlock(GetSysMessageResult);
             manage.AddResultBlock(GetSysMessageResult);
         }
+        //移除系统信息反馈
+        private void RemoveSysMessage(NetMessageManage manage)
+        {
+            manage.RemoveResultBlock(GetSysMessageResult);
+        }
         //获取系统信息反馈结果回调
         private void GetSysMessageResult(ResultModel result)
         {
@@ -376,31 +390,65 @@ namespace UserNetTest
                 
                 SCSysMessage message = result.pack.Content.ScSysMessage;
                 IList<string> paramslist = message.ParamsList;
+                SYSMSG_TYPE type = (SYSMSG_TYPE)message.Cmd;
 
-                if (message.Cmd == 6)
+                switch (type)
                 {
-                    int blance = int.Parse(message.ParamsList[2]);
-                    //扣费时间    下次扣费时间    扣费金额
-                    model.usebalance += blance;
-                    this.Invoke(new UIHandleBlock(delegate
-                    {
-                        //判断是否是当前按钮，是的话当前按钮可以进行的操作
-                        SimpleButton button = (SimpleButton)this.panel1.Controls[result.index];
-                        if (button.Equals(this.selectButton))
+
+                    //扣费
+                    case SYSMSG_TYPE.DEDUCT:
                         {
-                            this.MessageLabel.Text = "已扣金额 " + model.usebalance + " 元";
+                            int blance = int.Parse(message.ParamsList[2]);
+                            //扣费时间    下次扣费时间    扣费金额
+                            model.usebalance += blance;
+                            this.Invoke(new UIHandleBlock(delegate
+                            {
+                                //判断是否是当前按钮，是的话当前按钮可以进行的操作
+                                SimpleButton button = (SimpleButton)this.panel1.Controls[result.index];
+                                if (button.Equals(this.selectButton))
+                                {
+                                    this.MessageLabel.Text = "已扣金额 " + model.usebalance + " 元";
+                                }
+
+
+                            }));
                         }
+                        break;
+
+                    //通知
+                    case SYSMSG_TYPE.NOTIFY:
+                        {
+                            this.Invoke(new UIHandleBlock(delegate
+                            {
+                                MessageBox.Show(model.card + "\n" + paramslist[0]); 
+
+                            }));
+                        }
+                        break;
+                        //强制下线(变开机状态)
+                    case SYSMSG_TYPE.TICKOFF:
+                        {
+                            this.Invoke(new UIHandleBlock(delegate
+                            {
+                                //成功回调
+                                model.status = COM_STATUS.OPEN_STATUS;
+                                //判断是否是当前按钮，是的话当前按钮可以进行的操作
+                                SimpleButton button = (SimpleButton)this.panel1.Controls[result.index];
+                                if (button.Equals(this.selectButton))
+                                {
+                                    ComputerOperation();
+                                }
+                            }));
+                        }
+                        break;
+
+                    default:
+                        break;
 
 
-                    }));
 
                 }
-                else if(message.Cmd == 2)
-                {
 
-                }
-
-              
             }
             else
             {
@@ -467,6 +515,32 @@ namespace UserNetTest
             form.StartPosition = FormStartPosition.CenterParent;
             form.ShowDialog();
 
+
+        }
+        #endregion
+
+        #region 进行呼叫（呼叫服务器）
+        private void CallServer(object sender, EventArgs e)
+        {
+            int index = this.panel1.Controls.GetChildIndex(this.selectButton);
+            SimpleModel model = this.GetModel(index);
+            CallServerForm form = new CallServerForm(model);
+            form.ShowInTaskbar = false;
+            form.StartPosition = FormStartPosition.CenterParent;
+            form.ShowDialog();
+
+
+        }
+        #endregion
+        #region 购买
+        private void Purchase(object sender, EventArgs e)
+        {
+            int index = this.panel1.Controls.GetChildIndex(this.selectButton);
+            SimpleModel model = this.GetModel(index);
+            ShopForm form = new ShopForm(model);
+            form.ShowInTaskbar = false;
+            form.StartPosition = FormStartPosition.CenterParent;
+            form.ShowDialog();
 
         }
         #endregion

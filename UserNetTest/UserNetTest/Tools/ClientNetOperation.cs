@@ -107,6 +107,34 @@ namespace UserNetTest.Tools
         }
         #endregion
 
+        #region 呼叫服务器
+        public static void CallServer(NetMessageManage manage, DataResultBlock resultBlock,string[] pars)
+        {
+            CSCommand.Builder command = new CSCommand.Builder()
+            {
+                 Cmd = 9,
+               
+            };
+            foreach(string par in pars)
+            {
+                command.AddParams(par);
+            }
+            MessageContent.Builder content = new MessageContent.Builder()
+            {
+                MessageType = 1,
+                CsCommand = command.Build(),
+            };
+
+            MessagePack.Builder pack = new MessagePack.Builder()
+            {
+                Cmd = Cmd.CMD_COMMAND, 
+                Content = content.Build(),
+            };
+
+            manage.SendMsg(pack.Build(), resultBlock);
+        }
+        #endregion
+
         #region 用户充值
         //用户预充值 获取充值二维码
         public static void UserPreCharge(NetMessageManage manage, String card, DataResultBlock resultBlock,int amount)
@@ -152,5 +180,43 @@ namespace UserNetTest.Tools
             manage.SendMsg(pack.Build(), resultBlock);
         }
         #endregion
+
+
+        #region 进入商店获取商品列表
+        public static void GoShop(NetMessageManage manage, DataResultBlock resultBlock)
+        {
+            MessagePack.Builder pack = new MessagePack.Builder();
+            pack.Cmd = Cmd.CMD_CLIENT_SHOP;
+            manage.SendMsg(pack.Build(), resultBlock);
+        }
+        #endregion
+
+        #region 进行购买某个物品
+     
+        public static void PreBuyProduct(NetMessageManage manage, DataResultBlock resultBlock,string card,int goodid,int num)
+        {
+            CSPreBuy.Builder buy = new CSPreBuy.Builder();
+            buy.Cardnumber = card;
+            buy.Goodsid = goodid;
+            buy.Goodsnum = num;
+
+            MessageContent.Builder content = new MessageContent.Builder();
+            content.MessageType = 1;
+            content.CsPreBuy = buy.Build();
+
+            MessagePack.Builder pack = new MessagePack.Builder();
+            pack.Cmd = Cmd.CMD_PREBUY;
+            pack.Content = content.Build();
+            manage.SendMsg(pack.Build(), resultBlock);
+        }
+        #endregion
+
+
+        public static void ToBuyProduct(NetMessageManage manage, DataResultBlock resultBlock)
+        {
+            MessagePack.Builder pack = new MessagePack.Builder();
+            pack.Cmd = Cmd.CMD_TOBUY;
+            manage.SendMsg(pack.Build(), resultBlock);
+        }
     }
 }

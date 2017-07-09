@@ -56,3 +56,5 @@ C:\Users\Administrator\Desktop\GitHub\NetBarTestDemo\UserNetTest\UserNetTest\bin
 C:\Users\Administrator\Desktop\GitHub\NetBarTestDemo\UserNetTest\UserNetTest\bin\Debug\UserNetTest.exe
 C:\Users\Administrator\Desktop\GitHub\NetBarTestDemo\UserNetTest\UserNetTest\bin\Debug\UserNetTest.pdb
 C:\Users\Administrator\Desktop\GitHub\NetBarTestDemo\UserNetTest\UserNetTest\bin\Debug\Google.ProtocolBuffers.dll
+C:\Users\Administrator\Desktop\GitHub\NetBarTestDemo\UserNetTest\UserNetTest\obj\Debug\UserNetTest.Forms.CallServerForm.resources
+C:\Users\Administrator\Desktop\GitHub\NetBarTestDemo\UserNetTest\UserNetTest\obj\Debug\UserNetTest.Forms.ShopForm.resources

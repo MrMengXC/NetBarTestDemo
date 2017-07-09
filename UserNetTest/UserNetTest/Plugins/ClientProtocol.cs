@@ -52,8 +52,8 @@ public static partial class ClientProtocol {
   internal static pb::FieldAccess.FieldAccessorTable<global::SCToBuy, global::SCToBuy.Builder> internal__static_SCToBuy__FieldAccessorTable;
   internal static pbd::MessageDescriptor internal__static_SCSysMessage__Descriptor;
   internal static pb::FieldAccess.FieldAccessorTable<global::SCSysMessage, global::SCSysMessage.Builder> internal__static_SCSysMessage__FieldAccessorTable;
-  internal static pbd::MessageDescriptor internal__static_CSUserMessage__Descriptor;
-  internal static pb::FieldAccess.FieldAccessorTable<global::CSUserMessage, global::CSUserMessage.Builder> internal__static_CSUserMessage__FieldAccessorTable;
+  internal static pbd::MessageDescriptor internal__static_CSCommand__Descriptor;
+  internal static pb::FieldAccess.FieldAccessorTable<global::CSCommand, global::CSCommand.Builder> internal__static_CSCommand__FieldAccessorTable;
   internal static pbd::MessageDescriptor internal__static_CSEvaluate__Descriptor;
   internal static pb::FieldAccess.FieldAccessorTable<global::CSEvaluate, global::CSEvaluate.Builder> internal__static_CSEvaluate__FieldAccessorTable;
   internal static pbd::MessageDescriptor internal__static_SCEvaluate__Descriptor;
@@ -79,65 +79,65 @@ public static partial class ClientProtocol {
           "ChRDbGllbnRQcm90b2NvbC5wcm90bxoQQmFzZVN0cnVjdC5wcm90byJmCgtN", 
           "ZXNzYWdlUGFjaxIRCgNjbWQYASACKA4yBC5DbWQSDwoHdmVyc2lvbhgCIAEo", 
           "BRIRCglzZXNzaW9uSWQYAyABKAUSIAoHY29udGVudBgEIAEoCzIPLk1lc3Nh", 
-          "Z2VDb250ZW50Iu4GCg5NZXNzYWdlQ29udGVudBITCgttZXNzYWdlVHlwZRgB", 
-          "IAIoBRIhCghlcnJvclRpcBgCIAEoCzIPLlN0cnVjdEVycm9yVGlwEiQKDGNz", 
-          "Q2xpZW50T3BlbhjIASABKAsyDS5DU0NsaWVudE9wZW4SJgoNY3NDbGllbnRD", 
-          "bG9zZRjJASABKAsyDi5DU0NsaWVudENsb3NlEhoKB2NzTG9nb24YygEgASgL", 
-          "MgguQ1NMb2dvbhIaCgdzY0xvZ29uGMsBIAEoCzIILlNDTG9nb24SHAoIY3NM", 
-          "b2dvZmYYzAEgASgLMgkuQ1NMb2dvZmYSHAoIc2NMb2dvZmYYzQEgASgLMgku", 
-          "U0NMb2dvZmYSHAoIY3NIdW5ndXAYzgEgASgLMgkuQ1NIdW5ndXASIgoLY3NQ", 
-          "cmVDaGFyZ2UYzwEgASgLMgwuQ1NQcmVDaGFyZ2USIgoLc2NQcmVDaGFyZ2UY", 
-          "0AEgASgLMgwuU0NQcmVDaGFyZ2USIAoKc2NUb0NoYXJnZRjRASABKAsyCy5T", 
-          "Q1RvQ2hhcmdlEhgKBnNjU2hvcBjSASABKAsyBy5TQ1Nob3ASHgoJY3NDYXJ0", 
-          "QWRkGNMBIAEoCzIKLkNTQ2FydEFkZBIeCgljc0NhcnREZWwY1AEgASgLMgou", 
-          "Q1NDYXJ0RGVsEhwKCGNzUHJlQnV5GNUBIAEoCzIJLkNTUHJlQnV5EhwKCHNj", 
-          "UHJlQnV5GNYBIAEoCzIJLlNDUHJlQnV5EhoKB3NjVG9CdXkY1wEgASgLMggu", 
-          "U0NUb0J1eRIkCgxzY1N5c01lc3NhZ2UY2AEgASgLMg0uU0NTeXNNZXNzYWdl", 
-          "EiYKDWNzVXNlck1lc3NhZ2UY2QEgASgLMg4uQ1NVc2VyTWVzc2FnZRIgCgpj", 
-          "c0V2YWx1YXRlGNoBIAEoCzILLkNTRXZhbHVhdGUSIAoKc2NFdmFsdWF0ZRjb", 
-          "ASABKAsyCy5TQ0V2YWx1YXRlEiQKDGNzVmVyaWZ5Q29kZRjcASABKAsyDS5D", 
-          "U1ZlcmlmeUNvZGUSJAoMc2NWZXJpZnlDb2RlGN0BIAEoCzINLlNDVmVyaWZ5", 
-          "Q29kZRIkCgxjc0JpbmRNb2JpbGUY3gEgASgLMg0uQ1NCaW5kTW9iaWxlEiQK", 
-          "DHNjQmluZE1vYmlsZRjfASABKAsyDS5TQ0JpbmRNb2JpbGUiHAoMQ1NDbGll", 
-          "bnRPcGVuEgwKBHRleHQYASACKAkiDwoNQ1NDbGllbnRDbG9zZSIdCgdDU0xv", 
-          "Z29uEhIKCmNhcmRudW1iZXIYASACKAkibgoHU0NMb2dvbhIQCghtZW1iZXJp", 
-          "ZBgBIAIoBRISCgpjYXJkbnVtYmVyGAIgAigJEgwKBG5hbWUYBCACKAkSDQoF", 
-          "cmlnaHQYBSACKAUSDwoHYmFsYW5jZRgJIAIoBRIPCgdpbnRlZ2FsGAwgAigF", 
-          "Ih4KCENTTG9nb2ZmEhIKCmNhcmRudW1iZXIYASACKAkicQoIU0NMb2dvZmYS", 
-          "DAoEbmFtZRgBIAIoCRISCgpjYXJkbnVtYmVyGAIgAigJEg0KBXJpZ2h0GAMg", 
-          "AigJEg8KB2JhbGFuY2UYBCACKAUSEQoJdXNlZG1vbmV5GAUgAigFEhAKCHVz", 
-          "ZWR0aW1lGAYgAigFIh4KCENTSHVuZ3VwEhIKCmNhcmRudW1iZXIYASACKAki", 
-          "UwoLQ1NQcmVDaGFyZ2USEgoKY2FyZG51bWJlchgBIAIoCRIOCgZhbW91bnQY", 
-          "AiACKAUSDwoHcGF5bW9kZRgDIAIoBRIPCgdvZmZpY2FsGAQgAigFIh0KC1ND", 
-          "UHJlQ2hhcmdlEg4KBnFyY29kZRgBIAIoCSJxCgpTQ1RvQ2hhcmdlEgwKBG5h", 
-          "bWUYASACKAkSEgoKY2FyZG51bWJlchgCIAIoCRINCgVyaWdodBgDIAIoCRIQ", 
-          "CghyZWNoYXJnZRgEIAIoBRIPCgdiYWxhbmNlGAUgAigFEg8KB2ludGVnYWwY", 
-          "BiACKAUiJQoGU0NTaG9wEhsKBWdvb2RzGAEgAygLMgwuU3RydWN0R29vZHMi", 
-          "LgoJQ1NDYXJ0QWRkEg8KB2dvb2RzaWQYASACKAUSEAoIZ29vZHNudW0YAiAC", 
-          "KAUiLgoJQ1NDYXJ0RGVsEg8KB2dvb2RzaWQYASACKAUSEAoIZ29vZHNudW0Y", 
-          "AiACKAUiHgoIQ1NQcmVCdXkSEgoKY2FyZG51bWJlchgBIAIoCSIaCghTQ1By", 
-          "ZUJ1eRIOCgZxcmNvZGUYASACKAkihAEKB1NDVG9CdXkSDAoEbmFtZRgBIAIo", 
-          "CRISCgpjYXJkbnVtYmVyGAIgAigJEg0KBXJpZ2h0GAMgAigJEhEKCXVzZWRt", 
-          "b25leRgEIAIoBRITCgt1c2VkaW50ZWdhbBgFIAIoBRIPCgdiYWxhbmNlGAYg", 
-          "AigFEg8KB2ludGVnYWwYByACKAUiKwoMU0NTeXNNZXNzYWdlEgsKA2NtZBgB", 
-          "IAIoBRIOCgZwYXJhbXMYAiADKAkiHQoNQ1NVc2VyTWVzc2FnZRIMCgR0ZXh0", 
-          "GAEgAigJIk8KCkNTRXZhbHVhdGUSEQoJc3RhZmZTdGFyGAEgAigFEg8KB2Vu", 
-          "dlN0YXIYAiACKAUSDwoHZGV2U3RhchgDIAIoBRIMCgRldmFsGAQgASgJIh0K", 
-          "ClNDRXZhbHVhdGUSDwoHaW50ZWdhbBgBIAIoBSIjCgxDU1ZlcmlmeUNvZGUS", 
-          "EwoLcGhvbmVudW1iZXIYASACKAkiIgoMU0NWZXJpZnlDb2RlEhIKCnZlcmlm", 
-          "eWNvZGUYASACKAkiNwoMQ1NCaW5kTW9iaWxlEhMKC3Bob25lbnVtYmVyGAEg", 
-          "AigJEhIKCnZlcmlmeWNvZGUYAiACKAkiHwoMU0NCaW5kTW9iaWxlEg8KB2lu", 
-          "dGVnYWwYASACKAUqlgMKA0NtZBIUCg9DTURfQ0xJRU5UX09QRU4Q0A8SFQoQ", 
-          "Q01EX0NMSUVOVF9DTE9TRRDRDxIVChBDTURfQ0xJRU5UX0xPR09OENIPEhYK", 
-          "EUNNRF9DTElFTlRfTE9HT0ZGENMPEhYKEUNNRF9DTElFTlRfSFVOR1VQENQP", 
-          "EhIKDUNNRF9QUkVDSEFSR0UQ1Q8SEQoMQ01EX1RPQ0hBUkdFENYPEhQKD0NN", 
-          "RF9DTElFTlRfU0hPUBDXDxIYChNDTURfQ0xJRU5UX0NBUlRfQUREENgPEhgK", 
-          "E0NNRF9DTElFTlRfQ0FSVF9ERUwQ2Q8SDwoKQ01EX1BSRUJVWRDaDxIOCglD", 
-          "TURfVE9CVVkQ2w8SGgoVQ01EX0NMSUVOVF9TWVNNRVNTQUdFENwPEhsKFkNN", 
-          "RF9DTElFTlRfVVNFUk1FU1NBR0UQ3Q8SGAoTQ01EX0NMSUVOVF9FVkFMVUFU", 
-          "RRDeDxIaChVDTURfQ0xJRU5UX1ZFUklGWUNPREUQ3w8SGgoVQ01EX0NMSUVO", 
-          "VF9CSU5ETU9CSUxFEOAPQi8KHWNvbS5za3lzb2Z0LmNvcmUuYXV0by5tZXNz", 
-        "YWdlQg5DbGllbnRQcm90b2NvbA=="));
+          "Z2VDb250ZW50IuUGCg5NZXNzYWdlQ29udGVudBITCgttZXNzYWdlVHlwZRgB", 
+          "IAIoBRIhCghlcnJvclRpcBgCIAEoCzIPLlN0cnVjdEVycm9yVGlwEh0KCWNz", 
+          "Q29tbWFuZBgNIAEoCzIKLkNTQ29tbWFuZBIkCgxjc0NsaWVudE9wZW4YyAEg", 
+          "ASgLMg0uQ1NDbGllbnRPcGVuEiYKDWNzQ2xpZW50Q2xvc2UYyQEgASgLMg4u", 
+          "Q1NDbGllbnRDbG9zZRIaCgdjc0xvZ29uGMoBIAEoCzIILkNTTG9nb24SGgoH", 
+          "c2NMb2dvbhjLASABKAsyCC5TQ0xvZ29uEhwKCGNzTG9nb2ZmGMwBIAEoCzIJ", 
+          "LkNTTG9nb2ZmEhwKCHNjTG9nb2ZmGM0BIAEoCzIJLlNDTG9nb2ZmEhwKCGNz", 
+          "SHVuZ3VwGM4BIAEoCzIJLkNTSHVuZ3VwEiIKC2NzUHJlQ2hhcmdlGM8BIAEo", 
+          "CzIMLkNTUHJlQ2hhcmdlEiIKC3NjUHJlQ2hhcmdlGNABIAEoCzIMLlNDUHJl", 
+          "Q2hhcmdlEiAKCnNjVG9DaGFyZ2UY0QEgASgLMgsuU0NUb0NoYXJnZRIYCgZz", 
+          "Y1Nob3AY0gEgASgLMgcuU0NTaG9wEh4KCWNzQ2FydEFkZBjTASABKAsyCi5D", 
+          "U0NhcnRBZGQSHgoJY3NDYXJ0RGVsGNQBIAEoCzIKLkNTQ2FydERlbBIcCghj", 
+          "c1ByZUJ1eRjVASABKAsyCS5DU1ByZUJ1eRIcCghzY1ByZUJ1eRjWASABKAsy", 
+          "CS5TQ1ByZUJ1eRIaCgdzY1RvQnV5GNcBIAEoCzIILlNDVG9CdXkSJAoMc2NT", 
+          "eXNNZXNzYWdlGNgBIAEoCzINLlNDU3lzTWVzc2FnZRIgCgpjc0V2YWx1YXRl", 
+          "GNoBIAEoCzILLkNTRXZhbHVhdGUSIAoKc2NFdmFsdWF0ZRjbASABKAsyCy5T", 
+          "Q0V2YWx1YXRlEiQKDGNzVmVyaWZ5Q29kZRjcASABKAsyDS5DU1ZlcmlmeUNv", 
+          "ZGUSJAoMc2NWZXJpZnlDb2RlGN0BIAEoCzINLlNDVmVyaWZ5Q29kZRIkCgxj", 
+          "c0JpbmRNb2JpbGUY3gEgASgLMg0uQ1NCaW5kTW9iaWxlEiQKDHNjQmluZE1v", 
+          "YmlsZRjfASABKAsyDS5TQ0JpbmRNb2JpbGUiHAoMQ1NDbGllbnRPcGVuEgwK", 
+          "BHRleHQYASACKAkiDwoNQ1NDbGllbnRDbG9zZSIdCgdDU0xvZ29uEhIKCmNh", 
+          "cmRudW1iZXIYASACKAkibgoHU0NMb2dvbhIQCghtZW1iZXJpZBgBIAIoBRIS", 
+          "CgpjYXJkbnVtYmVyGAIgAigJEgwKBG5hbWUYBCACKAkSDQoFcmlnaHQYBSAC", 
+          "KAUSDwoHYmFsYW5jZRgJIAIoBRIPCgdpbnRlZ2FsGAwgAigFIh4KCENTTG9n", 
+          "b2ZmEhIKCmNhcmRudW1iZXIYASACKAkicQoIU0NMb2dvZmYSDAoEbmFtZRgB", 
+          "IAIoCRISCgpjYXJkbnVtYmVyGAIgAigJEg0KBXJpZ2h0GAMgAigJEg8KB2Jh", 
+          "bGFuY2UYBCACKAUSEQoJdXNlZG1vbmV5GAUgAigFEhAKCHVzZWR0aW1lGAYg", 
+          "AigFIh4KCENTSHVuZ3VwEhIKCmNhcmRudW1iZXIYASACKAkiUwoLQ1NQcmVD", 
+          "aGFyZ2USEgoKY2FyZG51bWJlchgBIAIoCRIOCgZhbW91bnQYAiACKAUSDwoH", 
+          "cGF5bW9kZRgDIAIoBRIPCgdvZmZpY2FsGAQgAigFIh0KC1NDUHJlQ2hhcmdl", 
+          "Eg4KBnFyY29kZRgBIAIoCSJxCgpTQ1RvQ2hhcmdlEgwKBG5hbWUYASACKAkS", 
+          "EgoKY2FyZG51bWJlchgCIAIoCRINCgVyaWdodBgDIAIoCRIQCghyZWNoYXJn", 
+          "ZRgEIAIoBRIPCgdiYWxhbmNlGAUgAigFEg8KB2ludGVnYWwYBiACKAUiJQoG", 
+          "U0NTaG9wEhsKBWdvb2RzGAEgAygLMgwuU3RydWN0R29vZHMiLgoJQ1NDYXJ0", 
+          "QWRkEg8KB2dvb2RzaWQYASACKAUSEAoIZ29vZHNudW0YAiACKAUiLgoJQ1ND", 
+          "YXJ0RGVsEg8KB2dvb2RzaWQYASACKAUSEAoIZ29vZHNudW0YAiACKAUiQQoI", 
+          "Q1NQcmVCdXkSEgoKY2FyZG51bWJlchgBIAIoCRIPCgdnb29kc2lkGAIgAigF", 
+          "EhAKCGdvb2RzbnVtGAMgAigFIhoKCFNDUHJlQnV5Eg4KBnFyY29kZRgBIAIo", 
+          "CSKEAQoHU0NUb0J1eRIMCgRuYW1lGAEgAigJEhIKCmNhcmRudW1iZXIYAiAC", 
+          "KAkSDQoFcmlnaHQYAyACKAkSEQoJdXNlZG1vbmV5GAQgAigFEhMKC3VzZWRp", 
+          "bnRlZ2FsGAUgAigFEg8KB2JhbGFuY2UYBiACKAUSDwoHaW50ZWdhbBgHIAIo", 
+          "BSIrCgxTQ1N5c01lc3NhZ2USCwoDY21kGAEgAigFEg4KBnBhcmFtcxgCIAMo", 
+          "CSIoCglDU0NvbW1hbmQSCwoDY21kGAEgAigFEg4KBnBhcmFtcxgCIAMoCSJP", 
+          "CgpDU0V2YWx1YXRlEhEKCXN0YWZmU3RhchgBIAIoBRIPCgdlbnZTdGFyGAIg", 
+          "AigFEg8KB2RldlN0YXIYAyACKAUSDAoEZXZhbBgEIAEoCSIdCgpTQ0V2YWx1", 
+          "YXRlEg8KB2ludGVnYWwYASACKAUiIwoMQ1NWZXJpZnlDb2RlEhMKC3Bob25l", 
+          "bnVtYmVyGAEgAigJIiIKDFNDVmVyaWZ5Q29kZRISCgp2ZXJpZnljb2RlGAEg", 
+          "AigJIjcKDENTQmluZE1vYmlsZRITCgtwaG9uZW51bWJlchgBIAIoCRISCgp2", 
+          "ZXJpZnljb2RlGAIgAigJIh8KDFNDQmluZE1vYmlsZRIPCgdpbnRlZ2FsGAEg", 
+          "AigFKosDCgNDbWQSEAoLQ01EX0NPTU1BTkQQ7QcSFAoPQ01EX0NMSUVOVF9P", 
+          "UEVOENAPEhUKEENNRF9DTElFTlRfQ0xPU0UQ0Q8SFQoQQ01EX0NMSUVOVF9M", 
+          "T0dPThDSDxIWChFDTURfQ0xJRU5UX0xPR09GRhDTDxIWChFDTURfQ0xJRU5U", 
+          "X0hVTkdVUBDUDxISCg1DTURfUFJFQ0hBUkdFENUPEhEKDENNRF9UT0NIQVJH", 
+          "RRDWDxIUCg9DTURfQ0xJRU5UX1NIT1AQ1w8SGAoTQ01EX0NMSUVOVF9DQVJU", 
+          "X0FERBDYDxIYChNDTURfQ0xJRU5UX0NBUlRfREVMENkPEg8KCkNNRF9QUkVC", 
+          "VVkQ2g8SDgoJQ01EX1RPQlVZENsPEhoKFUNNRF9DTElFTlRfU1lTTUVTU0FH", 
+          "RRDcDxIYChNDTURfQ0xJRU5UX0VWQUxVQVRFEN4PEhoKFUNNRF9DTElFTlRf", 
+          "VkVSSUZZQ09ERRDfDxIaChVDTURfQ0xJRU5UX0JJTkRNT0JJTEUQ4A9CLwod", 
+        "Y29tLnNreXNvZnQuY29yZS5hdXRvLm1lc3NhZ2VCDkNsaWVudFByb3RvY29s"));
     pbd::FileDescriptor.InternalDescriptorAssigner assigner = delegate(pbd::FileDescriptor root) {
       descriptor = root;
       internal__static_MessagePack__Descriptor = Descriptor.MessageTypes[0];
@@ -147,7 +147,7 @@ public static partial class ClientProtocol {
       internal__static_MessageContent__Descriptor = Descriptor.MessageTypes[1];
       internal__static_MessageContent__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::MessageContent, global::MessageContent.Builder>(internal__static_MessageContent__Descriptor,
-              new string[] { "MessageType", "ErrorTip", "CsClientOpen", "CsClientClose", "CsLogon", "ScLogon", "CsLogoff", "ScLogoff", "CsHungup", "CsPreCharge", "ScPreCharge", "ScToCharge", "ScShop", "CsCartAdd", "CsCartDel", "CsPreBuy", "ScPreBuy", "ScToBuy", "ScSysMessage", "CsUserMessage", "CsEvaluate", "ScEvaluate", "CsVerifyCode", "ScVerifyCode", "CsBindMobile", "ScBindMobile", });
+              new string[] { "MessageType", "ErrorTip", "CsCommand", "CsClientOpen", "CsClientClose", "CsLogon", "ScLogon", "CsLogoff", "ScLogoff", "CsHungup", "CsPreCharge", "ScPreCharge", "ScToCharge", "ScShop", "CsCartAdd", "CsCartDel", "CsPreBuy", "ScPreBuy", "ScToBuy", "ScSysMessage", "CsEvaluate", "ScEvaluate", "CsVerifyCode", "ScVerifyCode", "CsBindMobile", "ScBindMobile", });
       internal__static_CSClientOpen__Descriptor = Descriptor.MessageTypes[2];
       internal__static_CSClientOpen__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::CSClientOpen, global::CSClientOpen.Builder>(internal__static_CSClientOpen__Descriptor,
@@ -203,7 +203,7 @@ public static partial class ClientProtocol {
       internal__static_CSPreBuy__Descriptor = Descriptor.MessageTypes[15];
       internal__static_CSPreBuy__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::CSPreBuy, global::CSPreBuy.Builder>(internal__static_CSPreBuy__Descriptor,
-              new string[] { "Cardnumber", });
+              new string[] { "Cardnumber", "Goodsid", "Goodsnum", });
       internal__static_SCPreBuy__Descriptor = Descriptor.MessageTypes[16];
       internal__static_SCPreBuy__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::SCPreBuy, global::SCPreBuy.Builder>(internal__static_SCPreBuy__Descriptor,
@@ -216,10 +216,10 @@ public static partial class ClientProtocol {
       internal__static_SCSysMessage__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::SCSysMessage, global::SCSysMessage.Builder>(internal__static_SCSysMessage__Descriptor,
               new string[] { "Cmd", "Params", });
-      internal__static_CSUserMessage__Descriptor = Descriptor.MessageTypes[19];
-      internal__static_CSUserMessage__FieldAccessorTable = 
-          new pb::FieldAccess.FieldAccessorTable<global::CSUserMessage, global::CSUserMessage.Builder>(internal__static_CSUserMessage__Descriptor,
-              new string[] { "Text", });
+      internal__static_CSCommand__Descriptor = Descriptor.MessageTypes[19];
+      internal__static_CSCommand__FieldAccessorTable = 
+          new pb::FieldAccess.FieldAccessorTable<global::CSCommand, global::CSCommand.Builder>(internal__static_CSCommand__Descriptor,
+              new string[] { "Cmd", "Params", });
       internal__static_CSEvaluate__Descriptor = Descriptor.MessageTypes[20];
       internal__static_CSEvaluate__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::CSEvaluate, global::CSEvaluate.Builder>(internal__static_CSEvaluate__Descriptor,
@@ -256,6 +256,7 @@ public static partial class ClientProtocol {
 }
 #region Enums
 public enum Cmd {
+  CMD_COMMAND = 1005,
   CMD_CLIENT_OPEN = 2000,
   CMD_CLIENT_CLOSE = 2001,
   CMD_CLIENT_LOGON = 2002,
@@ -269,7 +270,6 @@ public enum Cmd {
   CMD_PREBUY = 2010,
   CMD_TOBUY = 2011,
   CMD_CLIENT_SYSMESSAGE = 2012,
-  CMD_CLIENT_USERMESSAGE = 2013,
   CMD_CLIENT_EVALUATE = 2014,
   CMD_CLIENT_VERIFYCODE = 2015,
   CMD_CLIENT_BINDMOBILE = 2016,
@@ -306,7 +306,7 @@ public sealed partial class MessagePack : pb::GeneratedMessage<MessagePack, Mess
   
   public const int CmdFieldNumber = 1;
   private bool hasCmd;
-  private global::Cmd cmd_ = global::Cmd.CMD_CLIENT_OPEN;
+  private global::Cmd cmd_ = global::Cmd.CMD_COMMAND;
   public bool HasCmd {
     get { return hasCmd; }
   }
@@ -630,7 +630,7 @@ public sealed partial class MessagePack : pb::GeneratedMessage<MessagePack, Mess
     public Builder ClearCmd() {
       PrepareBuilder();
       result.hasCmd = false;
-      result.cmd_ = global::Cmd.CMD_CLIENT_OPEN;
+      result.cmd_ = global::Cmd.CMD_COMMAND;
       return this;
     }
     
@@ -723,8 +723,8 @@ public sealed partial class MessagePack : pb::GeneratedMessage<MessagePack, Mess
 public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent, MessageContent.Builder> {
   private MessageContent() { }
   private static readonly MessageContent defaultInstance = new MessageContent().MakeReadOnly();
-  private static readonly string[] _messageContentFieldNames = new string[] { "csBindMobile", "csCartAdd", "csCartDel", "csClientClose", "csClientOpen", "csEvaluate", "csHungup", "csLogoff", "csLogon", "csPreBuy", "csPreCharge", "csUserMessage", "csVerifyCode", "errorTip", "messageType", "scBindMobile", "scEvaluate", "scLogoff", "scLogon", "scPreBuy", "scPreCharge", "scShop", "scSysMessage", "scToBuy", "scToCharge", "scVerifyCode" };
-  private static readonly uint[] _messageContentFieldTags = new uint[] { 1778, 1690, 1698, 1610, 1602, 1746, 1650, 1634, 1618, 1706, 1658, 1738, 1762, 18, 8, 1786, 1754, 1642, 1626, 1714, 1666, 1682, 1730, 1722, 1674, 1770 };
+  private static readonly string[] _messageContentFieldNames = new string[] { "csBindMobile", "csCartAdd", "csCartDel", "csClientClose", "csClientOpen", "csCommand", "csEvaluate", "csHungup", "csLogoff", "csLogon", "csPreBuy", "csPreCharge", "csVerifyCode", "errorTip", "messageType", "scBindMobile", "scEvaluate", "scLogoff", "scLogon", "scPreBuy", "scPreCharge", "scShop", "scSysMessage", "scToBuy", "scToCharge", "scVerifyCode" };
+  private static readonly uint[] _messageContentFieldTags = new uint[] { 1778, 1690, 1698, 1610, 1602, 106, 1746, 1650, 1634, 1618, 1706, 1658, 1762, 18, 8, 1786, 1754, 1642, 1626, 1714, 1666, 1682, 1730, 1722, 1674, 1770 };
   public static MessageContent DefaultInstance {
     get { return defaultInstance; }
   }
@@ -763,6 +763,16 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
   }
   public global::StructErrorTip ErrorTip {
     get { return errorTip_ ?? global::StructErrorTip.DefaultInstance; }
+  }
+  
+  public const int CsCommandFieldNumber = 13;
+  private bool hasCsCommand;
+  private global::CSCommand csCommand_;
+  public bool HasCsCommand {
+    get { return hasCsCommand; }
+  }
+  public global::CSCommand CsCommand {
+    get { return csCommand_ ?? global::CSCommand.DefaultInstance; }
   }
   
   public const int CsClientOpenFieldNumber = 200;
@@ -935,16 +945,6 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
     get { return scSysMessage_ ?? global::SCSysMessage.DefaultInstance; }
   }
   
-  public const int CsUserMessageFieldNumber = 217;
-  private bool hasCsUserMessage;
-  private global::CSUserMessage csUserMessage_;
-  public bool HasCsUserMessage {
-    get { return hasCsUserMessage; }
-  }
-  public global::CSUserMessage CsUserMessage {
-    get { return csUserMessage_ ?? global::CSUserMessage.DefaultInstance; }
-  }
-  
   public const int CsEvaluateFieldNumber = 218;
   private bool hasCsEvaluate;
   private global::CSEvaluate csEvaluate_;
@@ -1011,6 +1011,9 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
       if (HasErrorTip) {
         if (!ErrorTip.IsInitialized) return false;
       }
+      if (HasCsCommand) {
+        if (!CsCommand.IsInitialized) return false;
+      }
       if (HasCsClientOpen) {
         if (!CsClientOpen.IsInitialized) return false;
       }
@@ -1059,9 +1062,6 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
       if (HasScSysMessage) {
         if (!ScSysMessage.IsInitialized) return false;
       }
-      if (HasCsUserMessage) {
-        if (!CsUserMessage.IsInitialized) return false;
-      }
       if (HasCsEvaluate) {
         if (!CsEvaluate.IsInitialized) return false;
       }
@@ -1093,6 +1093,9 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
     if (hasErrorTip) {
       output.WriteMessage(2, field_names[13], ErrorTip);
     }
+    if (hasCsCommand) {
+      output.WriteMessage(13, field_names[5], CsCommand);
+    }
     if (hasCsClientOpen) {
       output.WriteMessage(200, field_names[4], CsClientOpen);
     }
@@ -1100,22 +1103,22 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
       output.WriteMessage(201, field_names[3], CsClientClose);
     }
     if (hasCsLogon) {
-      output.WriteMessage(202, field_names[8], CsLogon);
+      output.WriteMessage(202, field_names[9], CsLogon);
     }
     if (hasScLogon) {
       output.WriteMessage(203, field_names[18], ScLogon);
     }
     if (hasCsLogoff) {
-      output.WriteMessage(204, field_names[7], CsLogoff);
+      output.WriteMessage(204, field_names[8], CsLogoff);
     }
     if (hasScLogoff) {
       output.WriteMessage(205, field_names[17], ScLogoff);
     }
     if (hasCsHungup) {
-      output.WriteMessage(206, field_names[6], CsHungup);
+      output.WriteMessage(206, field_names[7], CsHungup);
     }
     if (hasCsPreCharge) {
-      output.WriteMessage(207, field_names[10], CsPreCharge);
+      output.WriteMessage(207, field_names[11], CsPreCharge);
     }
     if (hasScPreCharge) {
       output.WriteMessage(208, field_names[20], ScPreCharge);
@@ -1133,7 +1136,7 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
       output.WriteMessage(212, field_names[2], CsCartDel);
     }
     if (hasCsPreBuy) {
-      output.WriteMessage(213, field_names[9], CsPreBuy);
+      output.WriteMessage(213, field_names[10], CsPreBuy);
     }
     if (hasScPreBuy) {
       output.WriteMessage(214, field_names[19], ScPreBuy);
@@ -1144,11 +1147,8 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
     if (hasScSysMessage) {
       output.WriteMessage(216, field_names[22], ScSysMessage);
     }
-    if (hasCsUserMessage) {
-      output.WriteMessage(217, field_names[11], CsUserMessage);
-    }
     if (hasCsEvaluate) {
-      output.WriteMessage(218, field_names[5], CsEvaluate);
+      output.WriteMessage(218, field_names[6], CsEvaluate);
     }
     if (hasScEvaluate) {
       output.WriteMessage(219, field_names[16], ScEvaluate);
@@ -1187,6 +1187,9 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
     }
     if (hasErrorTip) {
       size += pb::CodedOutputStream.ComputeMessageSize(2, ErrorTip);
+    }
+    if (hasCsCommand) {
+      size += pb::CodedOutputStream.ComputeMessageSize(13, CsCommand);
     }
     if (hasCsClientOpen) {
       size += pb::CodedOutputStream.ComputeMessageSize(200, CsClientOpen);
@@ -1238,9 +1241,6 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
     }
     if (hasScSysMessage) {
       size += pb::CodedOutputStream.ComputeMessageSize(216, ScSysMessage);
-    }
-    if (hasCsUserMessage) {
-      size += pb::CodedOutputStream.ComputeMessageSize(217, CsUserMessage);
     }
     if (hasCsEvaluate) {
       size += pb::CodedOutputStream.ComputeMessageSize(218, CsEvaluate);
@@ -1388,6 +1388,9 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
       if (other.HasErrorTip) {
         MergeErrorTip(other.ErrorTip);
       }
+      if (other.HasCsCommand) {
+        MergeCsCommand(other.CsCommand);
+      }
       if (other.HasCsClientOpen) {
         MergeCsClientOpen(other.CsClientOpen);
       }
@@ -1438,9 +1441,6 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
       }
       if (other.HasScSysMessage) {
         MergeScSysMessage(other.ScSysMessage);
-      }
-      if (other.HasCsUserMessage) {
-        MergeCsUserMessage(other.CsUserMessage);
       }
       if (other.HasCsEvaluate) {
         MergeCsEvaluate(other.CsEvaluate);
@@ -1514,6 +1514,15 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
             }
             input.ReadMessage(subBuilder, extensionRegistry);
             ErrorTip = subBuilder.BuildPartial();
+            break;
+          }
+          case 106: {
+            global::CSCommand.Builder subBuilder = global::CSCommand.CreateBuilder();
+            if (result.hasCsCommand) {
+              subBuilder.MergeFrom(CsCommand);
+            }
+            input.ReadMessage(subBuilder, extensionRegistry);
+            CsCommand = subBuilder.BuildPartial();
             break;
           }
           case 1602: {
@@ -1669,15 +1678,6 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
             ScSysMessage = subBuilder.BuildPartial();
             break;
           }
-          case 1738: {
-            global::CSUserMessage.Builder subBuilder = global::CSUserMessage.CreateBuilder();
-            if (result.hasCsUserMessage) {
-              subBuilder.MergeFrom(CsUserMessage);
-            }
-            input.ReadMessage(subBuilder, extensionRegistry);
-            CsUserMessage = subBuilder.BuildPartial();
-            break;
-          }
           case 1746: {
             global::CSEvaluate.Builder subBuilder = global::CSEvaluate.CreateBuilder();
             if (result.hasCsEvaluate) {
@@ -1799,6 +1799,46 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
       PrepareBuilder();
       result.hasErrorTip = false;
       result.errorTip_ = null;
+      return this;
+    }
+    
+    public bool HasCsCommand {
+     get { return result.hasCsCommand; }
+    }
+    public global::CSCommand CsCommand {
+      get { return result.CsCommand; }
+      set { SetCsCommand(value); }
+    }
+    public Builder SetCsCommand(global::CSCommand value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasCsCommand = true;
+      result.csCommand_ = value;
+      return this;
+    }
+    public Builder SetCsCommand(global::CSCommand.Builder builderForValue) {
+      pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
+      PrepareBuilder();
+      result.hasCsCommand = true;
+      result.csCommand_ = builderForValue.Build();
+      return this;
+    }
+    public Builder MergeCsCommand(global::CSCommand value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      if (result.hasCsCommand &&
+          result.csCommand_ != global::CSCommand.DefaultInstance) {
+          result.csCommand_ = global::CSCommand.CreateBuilder(result.csCommand_).MergeFrom(value).BuildPartial();
+      } else {
+        result.csCommand_ = value;
+      }
+      result.hasCsCommand = true;
+      return this;
+    }
+    public Builder ClearCsCommand() {
+      PrepareBuilder();
+      result.hasCsCommand = false;
+      result.csCommand_ = null;
       return this;
     }
     
@@ -2479,46 +2519,6 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
       PrepareBuilder();
       result.hasScSysMessage = false;
       result.scSysMessage_ = null;
-      return this;
-    }
-    
-    public bool HasCsUserMessage {
-     get { return result.hasCsUserMessage; }
-    }
-    public global::CSUserMessage CsUserMessage {
-      get { return result.CsUserMessage; }
-      set { SetCsUserMessage(value); }
-    }
-    public Builder SetCsUserMessage(global::CSUserMessage value) {
-      pb::ThrowHelper.ThrowIfNull(value, "value");
-      PrepareBuilder();
-      result.hasCsUserMessage = true;
-      result.csUserMessage_ = value;
-      return this;
-    }
-    public Builder SetCsUserMessage(global::CSUserMessage.Builder builderForValue) {
-      pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
-      PrepareBuilder();
-      result.hasCsUserMessage = true;
-      result.csUserMessage_ = builderForValue.Build();
-      return this;
-    }
-    public Builder MergeCsUserMessage(global::CSUserMessage value) {
-      pb::ThrowHelper.ThrowIfNull(value, "value");
-      PrepareBuilder();
-      if (result.hasCsUserMessage &&
-          result.csUserMessage_ != global::CSUserMessage.DefaultInstance) {
-          result.csUserMessage_ = global::CSUserMessage.CreateBuilder(result.csUserMessage_).MergeFrom(value).BuildPartial();
-      } else {
-        result.csUserMessage_ = value;
-      }
-      result.hasCsUserMessage = true;
-      return this;
-    }
-    public Builder ClearCsUserMessage() {
-      PrepareBuilder();
-      result.hasCsUserMessage = false;
-      result.csUserMessage_ = null;
       return this;
     }
     
@@ -7238,8 +7238,8 @@ public sealed partial class CSCartDel : pb::GeneratedMessage<CSCartDel, CSCartDe
 public sealed partial class CSPreBuy : pb::GeneratedMessage<CSPreBuy, CSPreBuy.Builder> {
   private CSPreBuy() { }
   private static readonly CSPreBuy defaultInstance = new CSPreBuy().MakeReadOnly();
-  private static readonly string[] _cSPreBuyFieldNames = new string[] { "cardnumber" };
-  private static readonly uint[] _cSPreBuyFieldTags = new uint[] { 10 };
+  private static readonly string[] _cSPreBuyFieldNames = new string[] { "cardnumber", "goodsid", "goodsnum" };
+  private static readonly uint[] _cSPreBuyFieldTags = new uint[] { 10, 16, 24 };
   public static CSPreBuy DefaultInstance {
     get { return defaultInstance; }
   }
@@ -7270,9 +7270,31 @@ public sealed partial class CSPreBuy : pb::GeneratedMessage<CSPreBuy, CSPreBuy.B
     get { return cardnumber_; }
   }
   
+  public const int GoodsidFieldNumber = 2;
+  private bool hasGoodsid;
+  private int goodsid_;
+  public bool HasGoodsid {
+    get { return hasGoodsid; }
+  }
+  public int Goodsid {
+    get { return goodsid_; }
+  }
+  
+  public const int GoodsnumFieldNumber = 3;
+  private bool hasGoodsnum;
+  private int goodsnum_;
+  public bool HasGoodsnum {
+    get { return hasGoodsnum; }
+  }
+  public int Goodsnum {
+    get { return goodsnum_; }
+  }
+  
   public override bool IsInitialized {
     get {
       if (!hasCardnumber) return false;
+      if (!hasGoodsid) return false;
+      if (!hasGoodsnum) return false;
       return true;
     }
   }
@@ -7282,6 +7304,12 @@ public sealed partial class CSPreBuy : pb::GeneratedMessage<CSPreBuy, CSPreBuy.B
     string[] field_names = _cSPreBuyFieldNames;
     if (hasCardnumber) {
       output.WriteString(1, field_names[0], Cardnumber);
+    }
+    if (hasGoodsid) {
+      output.WriteInt32(2, field_names[1], Goodsid);
+    }
+    if (hasGoodsnum) {
+      output.WriteInt32(3, field_names[2], Goodsnum);
     }
     UnknownFields.WriteTo(output);
   }
@@ -7302,6 +7330,12 @@ public sealed partial class CSPreBuy : pb::GeneratedMessage<CSPreBuy, CSPreBuy.B
     size = 0;
     if (hasCardnumber) {
       size += pb::CodedOutputStream.ComputeStringSize(1, Cardnumber);
+    }
+    if (hasGoodsid) {
+      size += pb::CodedOutputStream.ComputeInt32Size(2, Goodsid);
+    }
+    if (hasGoodsnum) {
+      size += pb::CodedOutputStream.ComputeInt32Size(3, Goodsnum);
     }
     size += UnknownFields.SerializedSize;
     memoizedSerializedSize = size;
@@ -7428,6 +7462,12 @@ public sealed partial class CSPreBuy : pb::GeneratedMessage<CSPreBuy, CSPreBuy.B
       if (other.HasCardnumber) {
         Cardnumber = other.Cardnumber;
       }
+      if (other.HasGoodsid) {
+        Goodsid = other.Goodsid;
+      }
+      if (other.HasGoodsnum) {
+        Goodsnum = other.Goodsnum;
+      }
       this.MergeUnknownFields(other.UnknownFields);
       return this;
     }
@@ -7475,6 +7515,14 @@ public sealed partial class CSPreBuy : pb::GeneratedMessage<CSPreBuy, CSPreBuy.B
             result.hasCardnumber = input.ReadString(ref result.cardnumber_);
             break;
           }
+          case 16: {
+            result.hasGoodsid = input.ReadInt32(ref result.goodsid_);
+            break;
+          }
+          case 24: {
+            result.hasGoodsnum = input.ReadInt32(ref result.goodsnum_);
+            break;
+          }
         }
       }
       
@@ -7503,6 +7551,46 @@ public sealed partial class CSPreBuy : pb::GeneratedMessage<CSPreBuy, CSPreBuy.B
       PrepareBuilder();
       result.hasCardnumber = false;
       result.cardnumber_ = "";
+      return this;
+    }
+    
+    public bool HasGoodsid {
+      get { return result.hasGoodsid; }
+    }
+    public int Goodsid {
+      get { return result.Goodsid; }
+      set { SetGoodsid(value); }
+    }
+    public Builder SetGoodsid(int value) {
+      PrepareBuilder();
+      result.hasGoodsid = true;
+      result.goodsid_ = value;
+      return this;
+    }
+    public Builder ClearGoodsid() {
+      PrepareBuilder();
+      result.hasGoodsid = false;
+      result.goodsid_ = 0;
+      return this;
+    }
+    
+    public bool HasGoodsnum {
+      get { return result.hasGoodsnum; }
+    }
+    public int Goodsnum {
+      get { return result.Goodsnum; }
+      set { SetGoodsnum(value); }
+    }
+    public Builder SetGoodsnum(int value) {
+      PrepareBuilder();
+      result.hasGoodsnum = true;
+      result.goodsnum_ = value;
+      return this;
+    }
+    public Builder ClearGoodsnum() {
+      PrepareBuilder();
+      result.hasGoodsnum = false;
+      result.goodsnum_ = 0;
       return this;
     }
   }
@@ -8671,53 +8759,68 @@ public sealed partial class SCSysMessage : pb::GeneratedMessage<SCSysMessage, SC
 }
 
 [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-public sealed partial class CSUserMessage : pb::GeneratedMessage<CSUserMessage, CSUserMessage.Builder> {
-  private CSUserMessage() { }
-  private static readonly CSUserMessage defaultInstance = new CSUserMessage().MakeReadOnly();
-  private static readonly string[] _cSUserMessageFieldNames = new string[] { "text" };
-  private static readonly uint[] _cSUserMessageFieldTags = new uint[] { 10 };
-  public static CSUserMessage DefaultInstance {
+public sealed partial class CSCommand : pb::GeneratedMessage<CSCommand, CSCommand.Builder> {
+  private CSCommand() { }
+  private static readonly CSCommand defaultInstance = new CSCommand().MakeReadOnly();
+  private static readonly string[] _cSCommandFieldNames = new string[] { "cmd", "params" };
+  private static readonly uint[] _cSCommandFieldTags = new uint[] { 8, 18 };
+  public static CSCommand DefaultInstance {
     get { return defaultInstance; }
   }
   
-  public override CSUserMessage DefaultInstanceForType {
+  public override CSCommand DefaultInstanceForType {
     get { return DefaultInstance; }
   }
   
-  protected override CSUserMessage ThisMessage {
+  protected override CSCommand ThisMessage {
     get { return this; }
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::ClientProtocol.internal__static_CSUserMessage__Descriptor; }
+    get { return global::ClientProtocol.internal__static_CSCommand__Descriptor; }
   }
   
-  protected override pb::FieldAccess.FieldAccessorTable<CSUserMessage, CSUserMessage.Builder> InternalFieldAccessors {
-    get { return global::ClientProtocol.internal__static_CSUserMessage__FieldAccessorTable; }
+  protected override pb::FieldAccess.FieldAccessorTable<CSCommand, CSCommand.Builder> InternalFieldAccessors {
+    get { return global::ClientProtocol.internal__static_CSCommand__FieldAccessorTable; }
   }
   
-  public const int TextFieldNumber = 1;
-  private bool hasText;
-  private string text_ = "";
-  public bool HasText {
-    get { return hasText; }
+  public const int CmdFieldNumber = 1;
+  private bool hasCmd;
+  private int cmd_;
+  public bool HasCmd {
+    get { return hasCmd; }
   }
-  public string Text {
-    get { return text_; }
+  public int Cmd {
+    get { return cmd_; }
+  }
+  
+  public const int ParamsFieldNumber = 2;
+  private pbc::PopsicleList<string> params_ = new pbc::PopsicleList<string>();
+  public scg::IList<string> ParamsList {
+    get { return pbc::Lists.AsReadOnly(params_); }
+  }
+  public int ParamsCount {
+    get { return params_.Count; }
+  }
+  public string GetParams(int index) {
+    return params_[index];
   }
   
   public override bool IsInitialized {
     get {
-      if (!hasText) return false;
+      if (!hasCmd) return false;
       return true;
     }
   }
   
   public override void WriteTo(pb::ICodedOutputStream output) {
     CalcSerializedSize();
-    string[] field_names = _cSUserMessageFieldNames;
-    if (hasText) {
-      output.WriteString(1, field_names[0], Text);
+    string[] field_names = _cSCommandFieldNames;
+    if (hasCmd) {
+      output.WriteInt32(1, field_names[0], Cmd);
+    }
+    if (params_.Count > 0) {
+      output.WriteStringArray(2, field_names[1], params_);
     }
     UnknownFields.WriteTo(output);
   }
@@ -8736,56 +8839,65 @@ public sealed partial class CSUserMessage : pb::GeneratedMessage<CSUserMessage, 
     if (size != -1) return size;
     
     size = 0;
-    if (hasText) {
-      size += pb::CodedOutputStream.ComputeStringSize(1, Text);
+    if (hasCmd) {
+      size += pb::CodedOutputStream.ComputeInt32Size(1, Cmd);
+    }
+    {
+      int dataSize = 0;
+      foreach (string element in ParamsList) {
+        dataSize += pb::CodedOutputStream.ComputeStringSizeNoTag(element);
+      }
+      size += dataSize;
+      size += 1 * params_.Count;
     }
     size += UnknownFields.SerializedSize;
     memoizedSerializedSize = size;
     return size;
   }
-  public static CSUserMessage ParseFrom(pb::ByteString data) {
+  public static CSCommand ParseFrom(pb::ByteString data) {
     return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
   }
-  public static CSUserMessage ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
+  public static CSCommand ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
     return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
   }
-  public static CSUserMessage ParseFrom(byte[] data) {
+  public static CSCommand ParseFrom(byte[] data) {
     return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
   }
-  public static CSUserMessage ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
+  public static CSCommand ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
     return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
   }
-  public static CSUserMessage ParseFrom(global::System.IO.Stream input) {
+  public static CSCommand ParseFrom(global::System.IO.Stream input) {
     return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
   }
-  public static CSUserMessage ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+  public static CSCommand ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
     return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
   }
-  public static CSUserMessage ParseDelimitedFrom(global::System.IO.Stream input) {
+  public static CSCommand ParseDelimitedFrom(global::System.IO.Stream input) {
     return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
   }
-  public static CSUserMessage ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+  public static CSCommand ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
     return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
   }
-  public static CSUserMessage ParseFrom(pb::ICodedInputStream input) {
+  public static CSCommand ParseFrom(pb::ICodedInputStream input) {
     return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
   }
-  public static CSUserMessage ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+  public static CSCommand ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
     return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
   }
-  private CSUserMessage MakeReadOnly() {
+  private CSCommand MakeReadOnly() {
+    params_.MakeReadOnly();
     return this;
   }
   
   public static Builder CreateBuilder() { return new Builder(); }
   public override Builder ToBuilder() { return CreateBuilder(this); }
   public override Builder CreateBuilderForType() { return new Builder(); }
-  public static Builder CreateBuilder(CSUserMessage prototype) {
+  public static Builder CreateBuilder(CSCommand prototype) {
     return new Builder(prototype);
   }
   
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-  public sealed partial class Builder : pb::GeneratedBuilder<CSUserMessage, Builder> {
+  public sealed partial class Builder : pb::GeneratedBuilder<CSCommand, Builder> {
     protected override Builder ThisBuilder {
       get { return this; }
     }
@@ -8793,18 +8905,18 @@ public sealed partial class CSUserMessage : pb::GeneratedMessage<CSUserMessage, 
       result = DefaultInstance;
       resultIsReadOnly = true;
     }
-    internal Builder(CSUserMessage cloneFrom) {
+    internal Builder(CSCommand cloneFrom) {
       result = cloneFrom;
       resultIsReadOnly = true;
     }
     
     private bool resultIsReadOnly;
-    private CSUserMessage result;
+    private CSCommand result;
     
-    private CSUserMessage PrepareBuilder() {
+    private CSCommand PrepareBuilder() {
       if (resultIsReadOnly) {
-        CSUserMessage original = result;
-        result = new CSUserMessage();
+        CSCommand original = result;
+        result = new CSCommand();
         resultIsReadOnly = false;
         MergeFrom(original);
       }
@@ -8815,7 +8927,7 @@ public sealed partial class CSUserMessage : pb::GeneratedMessage<CSUserMessage, 
       get { return result.IsInitialized; }
     }
     
-    protected override CSUserMessage MessageBeingBuilt {
+    protected override CSCommand MessageBeingBuilt {
       get { return PrepareBuilder(); }
     }
     
@@ -8834,14 +8946,14 @@ public sealed partial class CSUserMessage : pb::GeneratedMessage<CSUserMessage, 
     }
     
     public override pbd::MessageDescriptor DescriptorForType {
-      get { return global::CSUserMessage.Descriptor; }
+      get { return global::CSCommand.Descriptor; }
     }
     
-    public override CSUserMessage DefaultInstanceForType {
-      get { return global::CSUserMessage.DefaultInstance; }
+    public override CSCommand DefaultInstanceForType {
+      get { return global::CSCommand.DefaultInstance; }
     }
     
-    public override CSUserMessage BuildPartial() {
+    public override CSCommand BuildPartial() {
       if (resultIsReadOnly) {
         return result;
       }
@@ -8850,19 +8962,22 @@ public sealed partial class CSUserMessage : pb::GeneratedMessage<CSUserMessage, 
     }
     
     public override Builder MergeFrom(pb::IMessage other) {
-      if (other is CSUserMessage) {
-        return MergeFrom((CSUserMessage) other);
+      if (other is CSCommand) {
+        return MergeFrom((CSCommand) other);
       } else {
         base.MergeFrom(other);
         return this;
       }
     }
     
-    public override Builder MergeFrom(CSUserMessage other) {
-      if (other == global::CSUserMessage.DefaultInstance) return this;
+    public override Builder MergeFrom(CSCommand other) {
+      if (other == global::CSCommand.DefaultInstance) return this;
       PrepareBuilder();
-      if (other.HasText) {
-        Text = other.Text;
+      if (other.HasCmd) {
+        Cmd = other.Cmd;
+      }
+      if (other.params_.Count != 0) {
+        result.params_.Add(other.params_);
       }
       this.MergeUnknownFields(other.UnknownFields);
       return this;
@@ -8879,9 +8994,9 @@ public sealed partial class CSUserMessage : pb::GeneratedMessage<CSUserMessage, 
       string field_name;
       while (input.ReadTag(out tag, out field_name)) {
         if(tag == 0 && field_name != null) {
-          int field_ordinal = global::System.Array.BinarySearch(_cSUserMessageFieldNames, field_name, global::System.StringComparer.Ordinal);
+          int field_ordinal = global::System.Array.BinarySearch(_cSCommandFieldNames, field_name, global::System.StringComparer.Ordinal);
           if(field_ordinal >= 0)
-            tag = _cSUserMessageFieldTags[field_ordinal];
+            tag = _cSCommandFieldTags[field_ordinal];
           else {
             if (unknownFields == null) {
               unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
@@ -8907,8 +9022,12 @@ public sealed partial class CSUserMessage : pb::GeneratedMessage<CSUserMessage, 
             ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
             break;
           }
-          case 10: {
-            result.hasText = input.ReadString(ref result.text_);
+          case 8: {
+            result.hasCmd = input.ReadInt32(ref result.cmd_);
+            break;
+          }
+          case 18: {
+            input.ReadStringArray(tag, field_name, result.params_);
             break;
           }
         }
@@ -8921,28 +9040,59 @@ public sealed partial class CSUserMessage : pb::GeneratedMessage<CSUserMessage, 
     }
     
     
-    public bool HasText {
-      get { return result.hasText; }
+    public bool HasCmd {
+      get { return result.hasCmd; }
     }
-    public string Text {
-      get { return result.Text; }
-      set { SetText(value); }
+    public int Cmd {
+      get { return result.Cmd; }
+      set { SetCmd(value); }
     }
-    public Builder SetText(string value) {
-      pb::ThrowHelper.ThrowIfNull(value, "value");
+    public Builder SetCmd(int value) {
       PrepareBuilder();
-      result.hasText = true;
-      result.text_ = value;
+      result.hasCmd = true;
+      result.cmd_ = value;
       return this;
     }
-    public Builder ClearText() {
+    public Builder ClearCmd() {
       PrepareBuilder();
-      result.hasText = false;
-      result.text_ = "";
+      result.hasCmd = false;
+      result.cmd_ = 0;
+      return this;
+    }
+    
+    public pbc::IPopsicleList<string> ParamsList {
+      get { return PrepareBuilder().params_; }
+    }
+    public int ParamsCount {
+      get { return result.ParamsCount; }
+    }
+    public string GetParams(int index) {
+      return result.GetParams(index);
+    }
+    public Builder SetParams(int index, string value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.params_[index] = value;
+      return this;
+    }
+    public Builder AddParams(string value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.params_.Add(value);
+      return this;
+    }
+    public Builder AddRangeParams(scg::IEnumerable<string> values) {
+      PrepareBuilder();
+      result.params_.Add(values);
+      return this;
+    }
+    public Builder ClearParams() {
+      PrepareBuilder();
+      result.params_.Clear();
       return this;
     }
   }
-  static CSUserMessage() {
+  static CSCommand() {
     object.ReferenceEquals(global::ClientProtocol.Descriptor, null);
   }
 }
