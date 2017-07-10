@@ -78,6 +78,7 @@
             // 
             // panel4
             // 
+            this.panel4.AutoScroll = true;
             this.panel4.BackColor = System.Drawing.Color.Transparent;
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(0, 197);

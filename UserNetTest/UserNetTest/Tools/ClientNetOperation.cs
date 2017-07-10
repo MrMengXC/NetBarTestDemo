@@ -183,10 +183,32 @@ namespace UserNetTest.Tools
 
 
         #region 进入商店获取商品列表
-        public static void GoShop(NetMessageManage manage, DataResultBlock resultBlock)
+        public static void GoShop(NetMessageManage manage, DataResultBlock resultBlock, int category, string key)
         {
+            StructPage.Builder page = new StructPage.Builder()
+            {
+                Pagebegin = 0,
+                Pagesize = 15,
+                Order = 0,
+                Fieldname = 0,
+            };
+
+            CSGoodsFind.Builder find = new CSGoodsFind.Builder();
+            find.Page = page.Build();
+            find.Category = category;
+            if(key != null && !key.Equals(""))
+            {
+                find.Keywords = key;
+            }
+        
+
+            MessageContent.Builder content = new MessageContent.Builder();
+            content.MessageType = 1;
+            content.CsGoodsFind = find.Build();
+
             MessagePack.Builder pack = new MessagePack.Builder();
-            pack.Cmd = Cmd.CMD_CLIENT_SHOP;
+            pack.Cmd = Cmd.CMD_GOODS_FIND;
+            pack.Content = content.Build();
             manage.SendMsg(pack.Build(), resultBlock);
         }
         #endregion

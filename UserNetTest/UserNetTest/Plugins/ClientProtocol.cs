@@ -38,8 +38,10 @@ public static partial class ClientProtocol {
   internal static pb::FieldAccess.FieldAccessorTable<global::SCPreCharge, global::SCPreCharge.Builder> internal__static_SCPreCharge__FieldAccessorTable;
   internal static pbd::MessageDescriptor internal__static_SCToCharge__Descriptor;
   internal static pb::FieldAccess.FieldAccessorTable<global::SCToCharge, global::SCToCharge.Builder> internal__static_SCToCharge__FieldAccessorTable;
-  internal static pbd::MessageDescriptor internal__static_SCShop__Descriptor;
-  internal static pb::FieldAccess.FieldAccessorTable<global::SCShop, global::SCShop.Builder> internal__static_SCShop__FieldAccessorTable;
+  internal static pbd::MessageDescriptor internal__static_CSGoodsFind__Descriptor;
+  internal static pb::FieldAccess.FieldAccessorTable<global::CSGoodsFind, global::CSGoodsFind.Builder> internal__static_CSGoodsFind__FieldAccessorTable;
+  internal static pbd::MessageDescriptor internal__static_SCGoodsFind__Descriptor;
+  internal static pb::FieldAccess.FieldAccessorTable<global::SCGoodsFind, global::SCGoodsFind.Builder> internal__static_SCGoodsFind__FieldAccessorTable;
   internal static pbd::MessageDescriptor internal__static_CSCartAdd__Descriptor;
   internal static pb::FieldAccess.FieldAccessorTable<global::CSCartAdd, global::CSCartAdd.Builder> internal__static_CSCartAdd__FieldAccessorTable;
   internal static pbd::MessageDescriptor internal__static_CSCartDel__Descriptor;
@@ -79,65 +81,68 @@ public static partial class ClientProtocol {
           "ChRDbGllbnRQcm90b2NvbC5wcm90bxoQQmFzZVN0cnVjdC5wcm90byJmCgtN", 
           "ZXNzYWdlUGFjaxIRCgNjbWQYASACKA4yBC5DbWQSDwoHdmVyc2lvbhgCIAEo", 
           "BRIRCglzZXNzaW9uSWQYAyABKAUSIAoHY29udGVudBgEIAEoCzIPLk1lc3Nh", 
-          "Z2VDb250ZW50IuUGCg5NZXNzYWdlQ29udGVudBITCgttZXNzYWdlVHlwZRgB", 
+          "Z2VDb250ZW50IpEHCg5NZXNzYWdlQ29udGVudBITCgttZXNzYWdlVHlwZRgB", 
           "IAIoBRIhCghlcnJvclRpcBgCIAEoCzIPLlN0cnVjdEVycm9yVGlwEh0KCWNz", 
-          "Q29tbWFuZBgNIAEoCzIKLkNTQ29tbWFuZBIkCgxjc0NsaWVudE9wZW4YyAEg", 
-          "ASgLMg0uQ1NDbGllbnRPcGVuEiYKDWNzQ2xpZW50Q2xvc2UYyQEgASgLMg4u", 
-          "Q1NDbGllbnRDbG9zZRIaCgdjc0xvZ29uGMoBIAEoCzIILkNTTG9nb24SGgoH", 
-          "c2NMb2dvbhjLASABKAsyCC5TQ0xvZ29uEhwKCGNzTG9nb2ZmGMwBIAEoCzIJ", 
-          "LkNTTG9nb2ZmEhwKCHNjTG9nb2ZmGM0BIAEoCzIJLlNDTG9nb2ZmEhwKCGNz", 
-          "SHVuZ3VwGM4BIAEoCzIJLkNTSHVuZ3VwEiIKC2NzUHJlQ2hhcmdlGM8BIAEo", 
-          "CzIMLkNTUHJlQ2hhcmdlEiIKC3NjUHJlQ2hhcmdlGNABIAEoCzIMLlNDUHJl", 
-          "Q2hhcmdlEiAKCnNjVG9DaGFyZ2UY0QEgASgLMgsuU0NUb0NoYXJnZRIYCgZz", 
-          "Y1Nob3AY0gEgASgLMgcuU0NTaG9wEh4KCWNzQ2FydEFkZBjTASABKAsyCi5D", 
-          "U0NhcnRBZGQSHgoJY3NDYXJ0RGVsGNQBIAEoCzIKLkNTQ2FydERlbBIcCghj", 
-          "c1ByZUJ1eRjVASABKAsyCS5DU1ByZUJ1eRIcCghzY1ByZUJ1eRjWASABKAsy", 
-          "CS5TQ1ByZUJ1eRIaCgdzY1RvQnV5GNcBIAEoCzIILlNDVG9CdXkSJAoMc2NT", 
-          "eXNNZXNzYWdlGNgBIAEoCzINLlNDU3lzTWVzc2FnZRIgCgpjc0V2YWx1YXRl", 
-          "GNoBIAEoCzILLkNTRXZhbHVhdGUSIAoKc2NFdmFsdWF0ZRjbASABKAsyCy5T", 
-          "Q0V2YWx1YXRlEiQKDGNzVmVyaWZ5Q29kZRjcASABKAsyDS5DU1ZlcmlmeUNv", 
-          "ZGUSJAoMc2NWZXJpZnlDb2RlGN0BIAEoCzINLlNDVmVyaWZ5Q29kZRIkCgxj", 
-          "c0JpbmRNb2JpbGUY3gEgASgLMg0uQ1NCaW5kTW9iaWxlEiQKDHNjQmluZE1v", 
-          "YmlsZRjfASABKAsyDS5TQ0JpbmRNb2JpbGUiHAoMQ1NDbGllbnRPcGVuEgwK", 
-          "BHRleHQYASACKAkiDwoNQ1NDbGllbnRDbG9zZSIdCgdDU0xvZ29uEhIKCmNh", 
-          "cmRudW1iZXIYASACKAkibgoHU0NMb2dvbhIQCghtZW1iZXJpZBgBIAIoBRIS", 
-          "CgpjYXJkbnVtYmVyGAIgAigJEgwKBG5hbWUYBCACKAkSDQoFcmlnaHQYBSAC", 
-          "KAUSDwoHYmFsYW5jZRgJIAIoBRIPCgdpbnRlZ2FsGAwgAigFIh4KCENTTG9n", 
-          "b2ZmEhIKCmNhcmRudW1iZXIYASACKAkicQoIU0NMb2dvZmYSDAoEbmFtZRgB", 
-          "IAIoCRISCgpjYXJkbnVtYmVyGAIgAigJEg0KBXJpZ2h0GAMgAigJEg8KB2Jh", 
-          "bGFuY2UYBCACKAUSEQoJdXNlZG1vbmV5GAUgAigFEhAKCHVzZWR0aW1lGAYg", 
-          "AigFIh4KCENTSHVuZ3VwEhIKCmNhcmRudW1iZXIYASACKAkiUwoLQ1NQcmVD", 
-          "aGFyZ2USEgoKY2FyZG51bWJlchgBIAIoCRIOCgZhbW91bnQYAiACKAUSDwoH", 
-          "cGF5bW9kZRgDIAIoBRIPCgdvZmZpY2FsGAQgAigFIh0KC1NDUHJlQ2hhcmdl", 
-          "Eg4KBnFyY29kZRgBIAIoCSJxCgpTQ1RvQ2hhcmdlEgwKBG5hbWUYASACKAkS", 
-          "EgoKY2FyZG51bWJlchgCIAIoCRINCgVyaWdodBgDIAIoCRIQCghyZWNoYXJn", 
-          "ZRgEIAIoBRIPCgdiYWxhbmNlGAUgAigFEg8KB2ludGVnYWwYBiACKAUiJQoG", 
-          "U0NTaG9wEhsKBWdvb2RzGAEgAygLMgwuU3RydWN0R29vZHMiLgoJQ1NDYXJ0", 
-          "QWRkEg8KB2dvb2RzaWQYASACKAUSEAoIZ29vZHNudW0YAiACKAUiLgoJQ1ND", 
-          "YXJ0RGVsEg8KB2dvb2RzaWQYASACKAUSEAoIZ29vZHNudW0YAiACKAUiQQoI", 
-          "Q1NQcmVCdXkSEgoKY2FyZG51bWJlchgBIAIoCRIPCgdnb29kc2lkGAIgAigF", 
-          "EhAKCGdvb2RzbnVtGAMgAigFIhoKCFNDUHJlQnV5Eg4KBnFyY29kZRgBIAIo", 
-          "CSKEAQoHU0NUb0J1eRIMCgRuYW1lGAEgAigJEhIKCmNhcmRudW1iZXIYAiAC", 
-          "KAkSDQoFcmlnaHQYAyACKAkSEQoJdXNlZG1vbmV5GAQgAigFEhMKC3VzZWRp", 
-          "bnRlZ2FsGAUgAigFEg8KB2JhbGFuY2UYBiACKAUSDwoHaW50ZWdhbBgHIAIo", 
-          "BSIrCgxTQ1N5c01lc3NhZ2USCwoDY21kGAEgAigFEg4KBnBhcmFtcxgCIAMo", 
-          "CSIoCglDU0NvbW1hbmQSCwoDY21kGAEgAigFEg4KBnBhcmFtcxgCIAMoCSJP", 
-          "CgpDU0V2YWx1YXRlEhEKCXN0YWZmU3RhchgBIAIoBRIPCgdlbnZTdGFyGAIg", 
-          "AigFEg8KB2RldlN0YXIYAyACKAUSDAoEZXZhbBgEIAEoCSIdCgpTQ0V2YWx1", 
-          "YXRlEg8KB2ludGVnYWwYASACKAUiIwoMQ1NWZXJpZnlDb2RlEhMKC3Bob25l", 
-          "bnVtYmVyGAEgAigJIiIKDFNDVmVyaWZ5Q29kZRISCgp2ZXJpZnljb2RlGAEg", 
-          "AigJIjcKDENTQmluZE1vYmlsZRITCgtwaG9uZW51bWJlchgBIAIoCRISCgp2", 
-          "ZXJpZnljb2RlGAIgAigJIh8KDFNDQmluZE1vYmlsZRIPCgdpbnRlZ2FsGAEg", 
-          "AigFKosDCgNDbWQSEAoLQ01EX0NPTU1BTkQQ7QcSFAoPQ01EX0NMSUVOVF9P", 
-          "UEVOENAPEhUKEENNRF9DTElFTlRfQ0xPU0UQ0Q8SFQoQQ01EX0NMSUVOVF9M", 
-          "T0dPThDSDxIWChFDTURfQ0xJRU5UX0xPR09GRhDTDxIWChFDTURfQ0xJRU5U", 
-          "X0hVTkdVUBDUDxISCg1DTURfUFJFQ0hBUkdFENUPEhEKDENNRF9UT0NIQVJH", 
-          "RRDWDxIUCg9DTURfQ0xJRU5UX1NIT1AQ1w8SGAoTQ01EX0NMSUVOVF9DQVJU", 
-          "X0FERBDYDxIYChNDTURfQ0xJRU5UX0NBUlRfREVMENkPEg8KCkNNRF9QUkVC", 
-          "VVkQ2g8SDgoJQ01EX1RPQlVZENsPEhoKFUNNRF9DTElFTlRfU1lTTUVTU0FH", 
-          "RRDcDxIYChNDTURfQ0xJRU5UX0VWQUxVQVRFEN4PEhoKFUNNRF9DTElFTlRf", 
-          "VkVSSUZZQ09ERRDfDxIaChVDTURfQ0xJRU5UX0JJTkRNT0JJTEUQ4A9CLwod", 
-        "Y29tLnNreXNvZnQuY29yZS5hdXRvLm1lc3NhZ2VCDkNsaWVudFByb3RvY29s"));
+          "Q29tbWFuZBgNIAEoCzIKLkNTQ29tbWFuZBIhCgtjc0dvb2RzRmluZBhHIAEo", 
+          "CzIMLkNTR29vZHNGaW5kEiEKC3NjR29vZHNGaW5kGEggASgLMgwuU0NHb29k", 
+          "c0ZpbmQSJAoMY3NDbGllbnRPcGVuGMgBIAEoCzINLkNTQ2xpZW50T3BlbhIm", 
+          "Cg1jc0NsaWVudENsb3NlGMkBIAEoCzIOLkNTQ2xpZW50Q2xvc2USGgoHY3NM", 
+          "b2dvbhjKASABKAsyCC5DU0xvZ29uEhoKB3NjTG9nb24YywEgASgLMgguU0NM", 
+          "b2dvbhIcCghjc0xvZ29mZhjMASABKAsyCS5DU0xvZ29mZhIcCghzY0xvZ29m", 
+          "ZhjNASABKAsyCS5TQ0xvZ29mZhIcCghjc0h1bmd1cBjOASABKAsyCS5DU0h1", 
+          "bmd1cBIiCgtjc1ByZUNoYXJnZRjPASABKAsyDC5DU1ByZUNoYXJnZRIiCgtz", 
+          "Y1ByZUNoYXJnZRjQASABKAsyDC5TQ1ByZUNoYXJnZRIgCgpzY1RvQ2hhcmdl", 
+          "GNEBIAEoCzILLlNDVG9DaGFyZ2USHgoJY3NDYXJ0QWRkGNMBIAEoCzIKLkNT", 
+          "Q2FydEFkZBIeCgljc0NhcnREZWwY1AEgASgLMgouQ1NDYXJ0RGVsEhwKCGNz", 
+          "UHJlQnV5GNUBIAEoCzIJLkNTUHJlQnV5EhwKCHNjUHJlQnV5GNYBIAEoCzIJ", 
+          "LlNDUHJlQnV5EhoKB3NjVG9CdXkY1wEgASgLMgguU0NUb0J1eRIkCgxzY1N5", 
+          "c01lc3NhZ2UY2AEgASgLMg0uU0NTeXNNZXNzYWdlEiAKCmNzRXZhbHVhdGUY", 
+          "2gEgASgLMgsuQ1NFdmFsdWF0ZRIgCgpzY0V2YWx1YXRlGNsBIAEoCzILLlND", 
+          "RXZhbHVhdGUSJAoMY3NWZXJpZnlDb2RlGNwBIAEoCzINLkNTVmVyaWZ5Q29k", 
+          "ZRIkCgxzY1ZlcmlmeUNvZGUY3QEgASgLMg0uU0NWZXJpZnlDb2RlEiQKDGNz", 
+          "QmluZE1vYmlsZRjeASABKAsyDS5DU0JpbmRNb2JpbGUSJAoMc2NCaW5kTW9i", 
+          "aWxlGN8BIAEoCzINLlNDQmluZE1vYmlsZSIcCgxDU0NsaWVudE9wZW4SDAoE", 
+          "dGV4dBgBIAIoCSIPCg1DU0NsaWVudENsb3NlIh0KB0NTTG9nb24SEgoKY2Fy", 
+          "ZG51bWJlchgBIAIoCSJuCgdTQ0xvZ29uEhAKCG1lbWJlcmlkGAEgAigFEhIK", 
+          "CmNhcmRudW1iZXIYAiACKAkSDAoEbmFtZRgEIAIoCRINCgVyaWdodBgFIAIo", 
+          "BRIPCgdiYWxhbmNlGAkgAigFEg8KB2ludGVnYWwYDCACKAUiHgoIQ1NMb2dv", 
+          "ZmYSEgoKY2FyZG51bWJlchgBIAIoCSJxCghTQ0xvZ29mZhIMCgRuYW1lGAEg", 
+          "AigJEhIKCmNhcmRudW1iZXIYAiACKAkSDQoFcmlnaHQYAyACKAkSDwoHYmFs", 
+          "YW5jZRgEIAIoBRIRCgl1c2VkbW9uZXkYBSACKAUSEAoIdXNlZHRpbWUYBiAC", 
+          "KAUiHgoIQ1NIdW5ndXASEgoKY2FyZG51bWJlchgBIAIoCSJTCgtDU1ByZUNo", 
+          "YXJnZRISCgpjYXJkbnVtYmVyGAEgAigJEg4KBmFtb3VudBgCIAIoBRIPCgdw", 
+          "YXltb2RlGAMgAigFEg8KB29mZmljYWwYBCACKAUiHQoLU0NQcmVDaGFyZ2US", 
+          "DgoGcXJjb2RlGAEgAigJInEKClNDVG9DaGFyZ2USDAoEbmFtZRgBIAIoCRIS", 
+          "CgpjYXJkbnVtYmVyGAIgAigJEg0KBXJpZ2h0GAMgAigJEhAKCHJlY2hhcmdl", 
+          "GAQgAigFEg8KB2JhbGFuY2UYBSACKAUSDwoHaW50ZWdhbBgGIAIoBSJMCgtD", 
+          "U0dvb2RzRmluZBIZCgRwYWdlGAEgAigLMgsuU3RydWN0UGFnZRIQCghjYXRl", 
+          "Z29yeRgCIAEoBRIQCghrZXl3b3JkcxgEIAEoCSIqCgtTQ0dvb2RzRmluZBIb", 
+          "CgVnb29kcxgBIAMoCzIMLlN0cnVjdEdvb2RzIi4KCUNTQ2FydEFkZBIPCgdn", 
+          "b29kc2lkGAEgAigFEhAKCGdvb2RzbnVtGAIgAigFIi4KCUNTQ2FydERlbBIP", 
+          "Cgdnb29kc2lkGAEgAigFEhAKCGdvb2RzbnVtGAIgAigFIkEKCENTUHJlQnV5", 
+          "EhIKCmNhcmRudW1iZXIYASACKAkSDwoHZ29vZHNpZBgCIAIoBRIQCghnb29k", 
+          "c251bRgDIAIoBSIaCghTQ1ByZUJ1eRIOCgZxcmNvZGUYASACKAkihAEKB1ND", 
+          "VG9CdXkSDAoEbmFtZRgBIAIoCRISCgpjYXJkbnVtYmVyGAIgAigJEg0KBXJp", 
+          "Z2h0GAMgAigJEhEKCXVzZWRtb25leRgEIAIoBRITCgt1c2VkaW50ZWdhbBgF", 
+          "IAIoBRIPCgdiYWxhbmNlGAYgAigFEg8KB2ludGVnYWwYByACKAUiKwoMU0NT", 
+          "eXNNZXNzYWdlEgsKA2NtZBgBIAIoBRIOCgZwYXJhbXMYAiADKAkiKAoJQ1ND", 
+          "b21tYW5kEgsKA2NtZBgBIAIoBRIOCgZwYXJhbXMYAiADKAkiTwoKQ1NFdmFs", 
+          "dWF0ZRIRCglzdGFmZlN0YXIYASACKAUSDwoHZW52U3RhchgCIAIoBRIPCgdk", 
+          "ZXZTdGFyGAMgAigFEgwKBGV2YWwYBCABKAkiHQoKU0NFdmFsdWF0ZRIPCgdp", 
+          "bnRlZ2FsGAEgAigFIiMKDENTVmVyaWZ5Q29kZRITCgtwaG9uZW51bWJlchgB", 
+          "IAIoCSIiCgxTQ1ZlcmlmeUNvZGUSEgoKdmVyaWZ5Y29kZRgBIAIoCSI3CgxD", 
+          "U0JpbmRNb2JpbGUSEwoLcGhvbmVudW1iZXIYASACKAkSEgoKdmVyaWZ5Y29k", 
+          "ZRgCIAIoCSIfCgxTQ0JpbmRNb2JpbGUSDwoHaW50ZWdhbBgBIAIoBSqKAwoD", 
+          "Q21kEhAKC0NNRF9DT01NQU5EEO0HEhMKDkNNRF9HT09EU19GSU5EELsIEhQK", 
+          "D0NNRF9DTElFTlRfT1BFThDQDxIVChBDTURfQ0xJRU5UX0NMT1NFENEPEhUK", 
+          "EENNRF9DTElFTlRfTE9HT04Q0g8SFgoRQ01EX0NMSUVOVF9MT0dPRkYQ0w8S", 
+          "FgoRQ01EX0NMSUVOVF9IVU5HVVAQ1A8SEgoNQ01EX1BSRUNIQVJHRRDVDxIR", 
+          "CgxDTURfVE9DSEFSR0UQ1g8SGAoTQ01EX0NMSUVOVF9DQVJUX0FERBDYDxIY", 
+          "ChNDTURfQ0xJRU5UX0NBUlRfREVMENkPEg8KCkNNRF9QUkVCVVkQ2g8SDgoJ", 
+          "Q01EX1RPQlVZENsPEhoKFUNNRF9DTElFTlRfU1lTTUVTU0FHRRDcDxIYChND", 
+          "TURfQ0xJRU5UX0VWQUxVQVRFEN4PEhoKFUNNRF9DTElFTlRfVkVSSUZZQ09E", 
+          "RRDfDxIaChVDTURfQ0xJRU5UX0JJTkRNT0JJTEUQ4A9CLwodY29tLnNreXNv", 
+        "ZnQuY29yZS5hdXRvLm1lc3NhZ2VCDkNsaWVudFByb3RvY29s"));
     pbd::FileDescriptor.InternalDescriptorAssigner assigner = delegate(pbd::FileDescriptor root) {
       descriptor = root;
       internal__static_MessagePack__Descriptor = Descriptor.MessageTypes[0];
@@ -147,7 +152,7 @@ public static partial class ClientProtocol {
       internal__static_MessageContent__Descriptor = Descriptor.MessageTypes[1];
       internal__static_MessageContent__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::MessageContent, global::MessageContent.Builder>(internal__static_MessageContent__Descriptor,
-              new string[] { "MessageType", "ErrorTip", "CsCommand", "CsClientOpen", "CsClientClose", "CsLogon", "ScLogon", "CsLogoff", "ScLogoff", "CsHungup", "CsPreCharge", "ScPreCharge", "ScToCharge", "ScShop", "CsCartAdd", "CsCartDel", "CsPreBuy", "ScPreBuy", "ScToBuy", "ScSysMessage", "CsEvaluate", "ScEvaluate", "CsVerifyCode", "ScVerifyCode", "CsBindMobile", "ScBindMobile", });
+              new string[] { "MessageType", "ErrorTip", "CsCommand", "CsGoodsFind", "ScGoodsFind", "CsClientOpen", "CsClientClose", "CsLogon", "ScLogon", "CsLogoff", "ScLogoff", "CsHungup", "CsPreCharge", "ScPreCharge", "ScToCharge", "CsCartAdd", "CsCartDel", "CsPreBuy", "ScPreBuy", "ScToBuy", "ScSysMessage", "CsEvaluate", "ScEvaluate", "CsVerifyCode", "ScVerifyCode", "CsBindMobile", "ScBindMobile", });
       internal__static_CSClientOpen__Descriptor = Descriptor.MessageTypes[2];
       internal__static_CSClientOpen__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::CSClientOpen, global::CSClientOpen.Builder>(internal__static_CSClientOpen__Descriptor,
@@ -188,59 +193,63 @@ public static partial class ClientProtocol {
       internal__static_SCToCharge__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::SCToCharge, global::SCToCharge.Builder>(internal__static_SCToCharge__Descriptor,
               new string[] { "Name", "Cardnumber", "Right", "Recharge", "Balance", "Integal", });
-      internal__static_SCShop__Descriptor = Descriptor.MessageTypes[12];
-      internal__static_SCShop__FieldAccessorTable = 
-          new pb::FieldAccess.FieldAccessorTable<global::SCShop, global::SCShop.Builder>(internal__static_SCShop__Descriptor,
+      internal__static_CSGoodsFind__Descriptor = Descriptor.MessageTypes[12];
+      internal__static_CSGoodsFind__FieldAccessorTable = 
+          new pb::FieldAccess.FieldAccessorTable<global::CSGoodsFind, global::CSGoodsFind.Builder>(internal__static_CSGoodsFind__Descriptor,
+              new string[] { "Page", "Category", "Keywords", });
+      internal__static_SCGoodsFind__Descriptor = Descriptor.MessageTypes[13];
+      internal__static_SCGoodsFind__FieldAccessorTable = 
+          new pb::FieldAccess.FieldAccessorTable<global::SCGoodsFind, global::SCGoodsFind.Builder>(internal__static_SCGoodsFind__Descriptor,
               new string[] { "Goods", });
-      internal__static_CSCartAdd__Descriptor = Descriptor.MessageTypes[13];
+      internal__static_CSCartAdd__Descriptor = Descriptor.MessageTypes[14];
       internal__static_CSCartAdd__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::CSCartAdd, global::CSCartAdd.Builder>(internal__static_CSCartAdd__Descriptor,
               new string[] { "Goodsid", "Goodsnum", });
-      internal__static_CSCartDel__Descriptor = Descriptor.MessageTypes[14];
+      internal__static_CSCartDel__Descriptor = Descriptor.MessageTypes[15];
       internal__static_CSCartDel__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::CSCartDel, global::CSCartDel.Builder>(internal__static_CSCartDel__Descriptor,
               new string[] { "Goodsid", "Goodsnum", });
-      internal__static_CSPreBuy__Descriptor = Descriptor.MessageTypes[15];
+      internal__static_CSPreBuy__Descriptor = Descriptor.MessageTypes[16];
       internal__static_CSPreBuy__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::CSPreBuy, global::CSPreBuy.Builder>(internal__static_CSPreBuy__Descriptor,
               new string[] { "Cardnumber", "Goodsid", "Goodsnum", });
-      internal__static_SCPreBuy__Descriptor = Descriptor.MessageTypes[16];
+      internal__static_SCPreBuy__Descriptor = Descriptor.MessageTypes[17];
       internal__static_SCPreBuy__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::SCPreBuy, global::SCPreBuy.Builder>(internal__static_SCPreBuy__Descriptor,
               new string[] { "Qrcode", });
-      internal__static_SCToBuy__Descriptor = Descriptor.MessageTypes[17];
+      internal__static_SCToBuy__Descriptor = Descriptor.MessageTypes[18];
       internal__static_SCToBuy__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::SCToBuy, global::SCToBuy.Builder>(internal__static_SCToBuy__Descriptor,
               new string[] { "Name", "Cardnumber", "Right", "Usedmoney", "Usedintegal", "Balance", "Integal", });
-      internal__static_SCSysMessage__Descriptor = Descriptor.MessageTypes[18];
+      internal__static_SCSysMessage__Descriptor = Descriptor.MessageTypes[19];
       internal__static_SCSysMessage__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::SCSysMessage, global::SCSysMessage.Builder>(internal__static_SCSysMessage__Descriptor,
               new string[] { "Cmd", "Params", });
-      internal__static_CSCommand__Descriptor = Descriptor.MessageTypes[19];
+      internal__static_CSCommand__Descriptor = Descriptor.MessageTypes[20];
       internal__static_CSCommand__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::CSCommand, global::CSCommand.Builder>(internal__static_CSCommand__Descriptor,
               new string[] { "Cmd", "Params", });
-      internal__static_CSEvaluate__Descriptor = Descriptor.MessageTypes[20];
+      internal__static_CSEvaluate__Descriptor = Descriptor.MessageTypes[21];
       internal__static_CSEvaluate__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::CSEvaluate, global::CSEvaluate.Builder>(internal__static_CSEvaluate__Descriptor,
               new string[] { "StaffStar", "EnvStar", "DevStar", "Eval", });
-      internal__static_SCEvaluate__Descriptor = Descriptor.MessageTypes[21];
+      internal__static_SCEvaluate__Descriptor = Descriptor.MessageTypes[22];
       internal__static_SCEvaluate__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::SCEvaluate, global::SCEvaluate.Builder>(internal__static_SCEvaluate__Descriptor,
               new string[] { "Integal", });
-      internal__static_CSVerifyCode__Descriptor = Descriptor.MessageTypes[22];
+      internal__static_CSVerifyCode__Descriptor = Descriptor.MessageTypes[23];
       internal__static_CSVerifyCode__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::CSVerifyCode, global::CSVerifyCode.Builder>(internal__static_CSVerifyCode__Descriptor,
               new string[] { "Phonenumber", });
-      internal__static_SCVerifyCode__Descriptor = Descriptor.MessageTypes[23];
+      internal__static_SCVerifyCode__Descriptor = Descriptor.MessageTypes[24];
       internal__static_SCVerifyCode__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::SCVerifyCode, global::SCVerifyCode.Builder>(internal__static_SCVerifyCode__Descriptor,
               new string[] { "Verifycode", });
-      internal__static_CSBindMobile__Descriptor = Descriptor.MessageTypes[24];
+      internal__static_CSBindMobile__Descriptor = Descriptor.MessageTypes[25];
       internal__static_CSBindMobile__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::CSBindMobile, global::CSBindMobile.Builder>(internal__static_CSBindMobile__Descriptor,
               new string[] { "Phonenumber", "Verifycode", });
-      internal__static_SCBindMobile__Descriptor = Descriptor.MessageTypes[25];
+      internal__static_SCBindMobile__Descriptor = Descriptor.MessageTypes[26];
       internal__static_SCBindMobile__FieldAccessorTable = 
           new pb::FieldAccess.FieldAccessorTable<global::SCBindMobile, global::SCBindMobile.Builder>(internal__static_SCBindMobile__Descriptor,
               new string[] { "Integal", });
@@ -257,6 +266,7 @@ public static partial class ClientProtocol {
 #region Enums
 public enum Cmd {
   CMD_COMMAND = 1005,
+  CMD_GOODS_FIND = 1083,
   CMD_CLIENT_OPEN = 2000,
   CMD_CLIENT_CLOSE = 2001,
   CMD_CLIENT_LOGON = 2002,
@@ -264,7 +274,6 @@ public enum Cmd {
   CMD_CLIENT_HUNGUP = 2004,
   CMD_PRECHARGE = 2005,
   CMD_TOCHARGE = 2006,
-  CMD_CLIENT_SHOP = 2007,
   CMD_CLIENT_CART_ADD = 2008,
   CMD_CLIENT_CART_DEL = 2009,
   CMD_PREBUY = 2010,
@@ -723,8 +732,8 @@ public sealed partial class MessagePack : pb::GeneratedMessage<MessagePack, Mess
 public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent, MessageContent.Builder> {
   private MessageContent() { }
   private static readonly MessageContent defaultInstance = new MessageContent().MakeReadOnly();
-  private static readonly string[] _messageContentFieldNames = new string[] { "csBindMobile", "csCartAdd", "csCartDel", "csClientClose", "csClientOpen", "csCommand", "csEvaluate", "csHungup", "csLogoff", "csLogon", "csPreBuy", "csPreCharge", "csVerifyCode", "errorTip", "messageType", "scBindMobile", "scEvaluate", "scLogoff", "scLogon", "scPreBuy", "scPreCharge", "scShop", "scSysMessage", "scToBuy", "scToCharge", "scVerifyCode" };
-  private static readonly uint[] _messageContentFieldTags = new uint[] { 1778, 1690, 1698, 1610, 1602, 106, 1746, 1650, 1634, 1618, 1706, 1658, 1762, 18, 8, 1786, 1754, 1642, 1626, 1714, 1666, 1682, 1730, 1722, 1674, 1770 };
+  private static readonly string[] _messageContentFieldNames = new string[] { "csBindMobile", "csCartAdd", "csCartDel", "csClientClose", "csClientOpen", "csCommand", "csEvaluate", "csGoodsFind", "csHungup", "csLogoff", "csLogon", "csPreBuy", "csPreCharge", "csVerifyCode", "errorTip", "messageType", "scBindMobile", "scEvaluate", "scGoodsFind", "scLogoff", "scLogon", "scPreBuy", "scPreCharge", "scSysMessage", "scToBuy", "scToCharge", "scVerifyCode" };
+  private static readonly uint[] _messageContentFieldTags = new uint[] { 1778, 1690, 1698, 1610, 1602, 106, 1746, 570, 1650, 1634, 1618, 1706, 1658, 1762, 18, 8, 1786, 1754, 578, 1642, 1626, 1714, 1666, 1730, 1722, 1674, 1770 };
   public static MessageContent DefaultInstance {
     get { return defaultInstance; }
   }
@@ -773,6 +782,26 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
   }
   public global::CSCommand CsCommand {
     get { return csCommand_ ?? global::CSCommand.DefaultInstance; }
+  }
+  
+  public const int CsGoodsFindFieldNumber = 71;
+  private bool hasCsGoodsFind;
+  private global::CSGoodsFind csGoodsFind_;
+  public bool HasCsGoodsFind {
+    get { return hasCsGoodsFind; }
+  }
+  public global::CSGoodsFind CsGoodsFind {
+    get { return csGoodsFind_ ?? global::CSGoodsFind.DefaultInstance; }
+  }
+  
+  public const int ScGoodsFindFieldNumber = 72;
+  private bool hasScGoodsFind;
+  private global::SCGoodsFind scGoodsFind_;
+  public bool HasScGoodsFind {
+    get { return hasScGoodsFind; }
+  }
+  public global::SCGoodsFind ScGoodsFind {
+    get { return scGoodsFind_ ?? global::SCGoodsFind.DefaultInstance; }
   }
   
   public const int CsClientOpenFieldNumber = 200;
@@ -873,16 +902,6 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
   }
   public global::SCToCharge ScToCharge {
     get { return scToCharge_ ?? global::SCToCharge.DefaultInstance; }
-  }
-  
-  public const int ScShopFieldNumber = 210;
-  private bool hasScShop;
-  private global::SCShop scShop_;
-  public bool HasScShop {
-    get { return hasScShop; }
-  }
-  public global::SCShop ScShop {
-    get { return scShop_ ?? global::SCShop.DefaultInstance; }
   }
   
   public const int CsCartAddFieldNumber = 211;
@@ -1014,6 +1033,12 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
       if (HasCsCommand) {
         if (!CsCommand.IsInitialized) return false;
       }
+      if (HasCsGoodsFind) {
+        if (!CsGoodsFind.IsInitialized) return false;
+      }
+      if (HasScGoodsFind) {
+        if (!ScGoodsFind.IsInitialized) return false;
+      }
       if (HasCsClientOpen) {
         if (!CsClientOpen.IsInitialized) return false;
       }
@@ -1040,9 +1065,6 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
       }
       if (HasScToCharge) {
         if (!ScToCharge.IsInitialized) return false;
-      }
-      if (HasScShop) {
-        if (!ScShop.IsInitialized) return false;
       }
       if (HasCsCartAdd) {
         if (!CsCartAdd.IsInitialized) return false;
@@ -1088,13 +1110,19 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
     CalcSerializedSize();
     string[] field_names = _messageContentFieldNames;
     if (hasMessageType) {
-      output.WriteInt32(1, field_names[14], MessageType);
+      output.WriteInt32(1, field_names[15], MessageType);
     }
     if (hasErrorTip) {
-      output.WriteMessage(2, field_names[13], ErrorTip);
+      output.WriteMessage(2, field_names[14], ErrorTip);
     }
     if (hasCsCommand) {
       output.WriteMessage(13, field_names[5], CsCommand);
+    }
+    if (hasCsGoodsFind) {
+      output.WriteMessage(71, field_names[7], CsGoodsFind);
+    }
+    if (hasScGoodsFind) {
+      output.WriteMessage(72, field_names[18], ScGoodsFind);
     }
     if (hasCsClientOpen) {
       output.WriteMessage(200, field_names[4], CsClientOpen);
@@ -1103,31 +1131,28 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
       output.WriteMessage(201, field_names[3], CsClientClose);
     }
     if (hasCsLogon) {
-      output.WriteMessage(202, field_names[9], CsLogon);
+      output.WriteMessage(202, field_names[10], CsLogon);
     }
     if (hasScLogon) {
-      output.WriteMessage(203, field_names[18], ScLogon);
+      output.WriteMessage(203, field_names[20], ScLogon);
     }
     if (hasCsLogoff) {
-      output.WriteMessage(204, field_names[8], CsLogoff);
+      output.WriteMessage(204, field_names[9], CsLogoff);
     }
     if (hasScLogoff) {
-      output.WriteMessage(205, field_names[17], ScLogoff);
+      output.WriteMessage(205, field_names[19], ScLogoff);
     }
     if (hasCsHungup) {
-      output.WriteMessage(206, field_names[7], CsHungup);
+      output.WriteMessage(206, field_names[8], CsHungup);
     }
     if (hasCsPreCharge) {
-      output.WriteMessage(207, field_names[11], CsPreCharge);
+      output.WriteMessage(207, field_names[12], CsPreCharge);
     }
     if (hasScPreCharge) {
-      output.WriteMessage(208, field_names[20], ScPreCharge);
+      output.WriteMessage(208, field_names[22], ScPreCharge);
     }
     if (hasScToCharge) {
-      output.WriteMessage(209, field_names[24], ScToCharge);
-    }
-    if (hasScShop) {
-      output.WriteMessage(210, field_names[21], ScShop);
+      output.WriteMessage(209, field_names[25], ScToCharge);
     }
     if (hasCsCartAdd) {
       output.WriteMessage(211, field_names[1], CsCartAdd);
@@ -1136,34 +1161,34 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
       output.WriteMessage(212, field_names[2], CsCartDel);
     }
     if (hasCsPreBuy) {
-      output.WriteMessage(213, field_names[10], CsPreBuy);
+      output.WriteMessage(213, field_names[11], CsPreBuy);
     }
     if (hasScPreBuy) {
-      output.WriteMessage(214, field_names[19], ScPreBuy);
+      output.WriteMessage(214, field_names[21], ScPreBuy);
     }
     if (hasScToBuy) {
-      output.WriteMessage(215, field_names[23], ScToBuy);
+      output.WriteMessage(215, field_names[24], ScToBuy);
     }
     if (hasScSysMessage) {
-      output.WriteMessage(216, field_names[22], ScSysMessage);
+      output.WriteMessage(216, field_names[23], ScSysMessage);
     }
     if (hasCsEvaluate) {
       output.WriteMessage(218, field_names[6], CsEvaluate);
     }
     if (hasScEvaluate) {
-      output.WriteMessage(219, field_names[16], ScEvaluate);
+      output.WriteMessage(219, field_names[17], ScEvaluate);
     }
     if (hasCsVerifyCode) {
-      output.WriteMessage(220, field_names[12], CsVerifyCode);
+      output.WriteMessage(220, field_names[13], CsVerifyCode);
     }
     if (hasScVerifyCode) {
-      output.WriteMessage(221, field_names[25], ScVerifyCode);
+      output.WriteMessage(221, field_names[26], ScVerifyCode);
     }
     if (hasCsBindMobile) {
       output.WriteMessage(222, field_names[0], CsBindMobile);
     }
     if (hasScBindMobile) {
-      output.WriteMessage(223, field_names[15], ScBindMobile);
+      output.WriteMessage(223, field_names[16], ScBindMobile);
     }
     UnknownFields.WriteTo(output);
   }
@@ -1190,6 +1215,12 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
     }
     if (hasCsCommand) {
       size += pb::CodedOutputStream.ComputeMessageSize(13, CsCommand);
+    }
+    if (hasCsGoodsFind) {
+      size += pb::CodedOutputStream.ComputeMessageSize(71, CsGoodsFind);
+    }
+    if (hasScGoodsFind) {
+      size += pb::CodedOutputStream.ComputeMessageSize(72, ScGoodsFind);
     }
     if (hasCsClientOpen) {
       size += pb::CodedOutputStream.ComputeMessageSize(200, CsClientOpen);
@@ -1220,9 +1251,6 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
     }
     if (hasScToCharge) {
       size += pb::CodedOutputStream.ComputeMessageSize(209, ScToCharge);
-    }
-    if (hasScShop) {
-      size += pb::CodedOutputStream.ComputeMessageSize(210, ScShop);
     }
     if (hasCsCartAdd) {
       size += pb::CodedOutputStream.ComputeMessageSize(211, CsCartAdd);
@@ -1391,6 +1419,12 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
       if (other.HasCsCommand) {
         MergeCsCommand(other.CsCommand);
       }
+      if (other.HasCsGoodsFind) {
+        MergeCsGoodsFind(other.CsGoodsFind);
+      }
+      if (other.HasScGoodsFind) {
+        MergeScGoodsFind(other.ScGoodsFind);
+      }
       if (other.HasCsClientOpen) {
         MergeCsClientOpen(other.CsClientOpen);
       }
@@ -1420,9 +1454,6 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
       }
       if (other.HasScToCharge) {
         MergeScToCharge(other.ScToCharge);
-      }
-      if (other.HasScShop) {
-        MergeScShop(other.ScShop);
       }
       if (other.HasCsCartAdd) {
         MergeCsCartAdd(other.CsCartAdd);
@@ -1525,6 +1556,24 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
             CsCommand = subBuilder.BuildPartial();
             break;
           }
+          case 570: {
+            global::CSGoodsFind.Builder subBuilder = global::CSGoodsFind.CreateBuilder();
+            if (result.hasCsGoodsFind) {
+              subBuilder.MergeFrom(CsGoodsFind);
+            }
+            input.ReadMessage(subBuilder, extensionRegistry);
+            CsGoodsFind = subBuilder.BuildPartial();
+            break;
+          }
+          case 578: {
+            global::SCGoodsFind.Builder subBuilder = global::SCGoodsFind.CreateBuilder();
+            if (result.hasScGoodsFind) {
+              subBuilder.MergeFrom(ScGoodsFind);
+            }
+            input.ReadMessage(subBuilder, extensionRegistry);
+            ScGoodsFind = subBuilder.BuildPartial();
+            break;
+          }
           case 1602: {
             global::CSClientOpen.Builder subBuilder = global::CSClientOpen.CreateBuilder();
             if (result.hasCsClientOpen) {
@@ -1613,15 +1662,6 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
             }
             input.ReadMessage(subBuilder, extensionRegistry);
             ScToCharge = subBuilder.BuildPartial();
-            break;
-          }
-          case 1682: {
-            global::SCShop.Builder subBuilder = global::SCShop.CreateBuilder();
-            if (result.hasScShop) {
-              subBuilder.MergeFrom(ScShop);
-            }
-            input.ReadMessage(subBuilder, extensionRegistry);
-            ScShop = subBuilder.BuildPartial();
             break;
           }
           case 1690: {
@@ -1839,6 +1879,86 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
       PrepareBuilder();
       result.hasCsCommand = false;
       result.csCommand_ = null;
+      return this;
+    }
+    
+    public bool HasCsGoodsFind {
+     get { return result.hasCsGoodsFind; }
+    }
+    public global::CSGoodsFind CsGoodsFind {
+      get { return result.CsGoodsFind; }
+      set { SetCsGoodsFind(value); }
+    }
+    public Builder SetCsGoodsFind(global::CSGoodsFind value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasCsGoodsFind = true;
+      result.csGoodsFind_ = value;
+      return this;
+    }
+    public Builder SetCsGoodsFind(global::CSGoodsFind.Builder builderForValue) {
+      pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
+      PrepareBuilder();
+      result.hasCsGoodsFind = true;
+      result.csGoodsFind_ = builderForValue.Build();
+      return this;
+    }
+    public Builder MergeCsGoodsFind(global::CSGoodsFind value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      if (result.hasCsGoodsFind &&
+          result.csGoodsFind_ != global::CSGoodsFind.DefaultInstance) {
+          result.csGoodsFind_ = global::CSGoodsFind.CreateBuilder(result.csGoodsFind_).MergeFrom(value).BuildPartial();
+      } else {
+        result.csGoodsFind_ = value;
+      }
+      result.hasCsGoodsFind = true;
+      return this;
+    }
+    public Builder ClearCsGoodsFind() {
+      PrepareBuilder();
+      result.hasCsGoodsFind = false;
+      result.csGoodsFind_ = null;
+      return this;
+    }
+    
+    public bool HasScGoodsFind {
+     get { return result.hasScGoodsFind; }
+    }
+    public global::SCGoodsFind ScGoodsFind {
+      get { return result.ScGoodsFind; }
+      set { SetScGoodsFind(value); }
+    }
+    public Builder SetScGoodsFind(global::SCGoodsFind value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasScGoodsFind = true;
+      result.scGoodsFind_ = value;
+      return this;
+    }
+    public Builder SetScGoodsFind(global::SCGoodsFind.Builder builderForValue) {
+      pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
+      PrepareBuilder();
+      result.hasScGoodsFind = true;
+      result.scGoodsFind_ = builderForValue.Build();
+      return this;
+    }
+    public Builder MergeScGoodsFind(global::SCGoodsFind value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      if (result.hasScGoodsFind &&
+          result.scGoodsFind_ != global::SCGoodsFind.DefaultInstance) {
+          result.scGoodsFind_ = global::SCGoodsFind.CreateBuilder(result.scGoodsFind_).MergeFrom(value).BuildPartial();
+      } else {
+        result.scGoodsFind_ = value;
+      }
+      result.hasScGoodsFind = true;
+      return this;
+    }
+    public Builder ClearScGoodsFind() {
+      PrepareBuilder();
+      result.hasScGoodsFind = false;
+      result.scGoodsFind_ = null;
       return this;
     }
     
@@ -2239,46 +2359,6 @@ public sealed partial class MessageContent : pb::GeneratedMessage<MessageContent
       PrepareBuilder();
       result.hasScToCharge = false;
       result.scToCharge_ = null;
-      return this;
-    }
-    
-    public bool HasScShop {
-     get { return result.hasScShop; }
-    }
-    public global::SCShop ScShop {
-      get { return result.ScShop; }
-      set { SetScShop(value); }
-    }
-    public Builder SetScShop(global::SCShop value) {
-      pb::ThrowHelper.ThrowIfNull(value, "value");
-      PrepareBuilder();
-      result.hasScShop = true;
-      result.scShop_ = value;
-      return this;
-    }
-    public Builder SetScShop(global::SCShop.Builder builderForValue) {
-      pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
-      PrepareBuilder();
-      result.hasScShop = true;
-      result.scShop_ = builderForValue.Build();
-      return this;
-    }
-    public Builder MergeScShop(global::SCShop value) {
-      pb::ThrowHelper.ThrowIfNull(value, "value");
-      PrepareBuilder();
-      if (result.hasScShop &&
-          result.scShop_ != global::SCShop.DefaultInstance) {
-          result.scShop_ = global::SCShop.CreateBuilder(result.scShop_).MergeFrom(value).BuildPartial();
-      } else {
-        result.scShop_ = value;
-      }
-      result.hasScShop = true;
-      return this;
-    }
-    public Builder ClearScShop() {
-      PrepareBuilder();
-      result.hasScShop = false;
-      result.scShop_ = null;
       return this;
     }
     
@@ -6290,29 +6370,418 @@ public sealed partial class SCToCharge : pb::GeneratedMessage<SCToCharge, SCToCh
 }
 
 [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-public sealed partial class SCShop : pb::GeneratedMessage<SCShop, SCShop.Builder> {
-  private SCShop() { }
-  private static readonly SCShop defaultInstance = new SCShop().MakeReadOnly();
-  private static readonly string[] _sCShopFieldNames = new string[] { "goods" };
-  private static readonly uint[] _sCShopFieldTags = new uint[] { 10 };
-  public static SCShop DefaultInstance {
+public sealed partial class CSGoodsFind : pb::GeneratedMessage<CSGoodsFind, CSGoodsFind.Builder> {
+  private CSGoodsFind() { }
+  private static readonly CSGoodsFind defaultInstance = new CSGoodsFind().MakeReadOnly();
+  private static readonly string[] _cSGoodsFindFieldNames = new string[] { "category", "keywords", "page" };
+  private static readonly uint[] _cSGoodsFindFieldTags = new uint[] { 16, 34, 10 };
+  public static CSGoodsFind DefaultInstance {
     get { return defaultInstance; }
   }
   
-  public override SCShop DefaultInstanceForType {
+  public override CSGoodsFind DefaultInstanceForType {
     get { return DefaultInstance; }
   }
   
-  protected override SCShop ThisMessage {
+  protected override CSGoodsFind ThisMessage {
     get { return this; }
   }
   
   public static pbd::MessageDescriptor Descriptor {
-    get { return global::ClientProtocol.internal__static_SCShop__Descriptor; }
+    get { return global::ClientProtocol.internal__static_CSGoodsFind__Descriptor; }
   }
   
-  protected override pb::FieldAccess.FieldAccessorTable<SCShop, SCShop.Builder> InternalFieldAccessors {
-    get { return global::ClientProtocol.internal__static_SCShop__FieldAccessorTable; }
+  protected override pb::FieldAccess.FieldAccessorTable<CSGoodsFind, CSGoodsFind.Builder> InternalFieldAccessors {
+    get { return global::ClientProtocol.internal__static_CSGoodsFind__FieldAccessorTable; }
+  }
+  
+  public const int PageFieldNumber = 1;
+  private bool hasPage;
+  private global::StructPage page_;
+  public bool HasPage {
+    get { return hasPage; }
+  }
+  public global::StructPage Page {
+    get { return page_ ?? global::StructPage.DefaultInstance; }
+  }
+  
+  public const int CategoryFieldNumber = 2;
+  private bool hasCategory;
+  private int category_;
+  public bool HasCategory {
+    get { return hasCategory; }
+  }
+  public int Category {
+    get { return category_; }
+  }
+  
+  public const int KeywordsFieldNumber = 4;
+  private bool hasKeywords;
+  private string keywords_ = "";
+  public bool HasKeywords {
+    get { return hasKeywords; }
+  }
+  public string Keywords {
+    get { return keywords_; }
+  }
+  
+  public override bool IsInitialized {
+    get {
+      if (!hasPage) return false;
+      if (!Page.IsInitialized) return false;
+      return true;
+    }
+  }
+  
+  public override void WriteTo(pb::ICodedOutputStream output) {
+    CalcSerializedSize();
+    string[] field_names = _cSGoodsFindFieldNames;
+    if (hasPage) {
+      output.WriteMessage(1, field_names[2], Page);
+    }
+    if (hasCategory) {
+      output.WriteInt32(2, field_names[0], Category);
+    }
+    if (hasKeywords) {
+      output.WriteString(4, field_names[1], Keywords);
+    }
+    UnknownFields.WriteTo(output);
+  }
+  
+  private int memoizedSerializedSize = -1;
+  public override int SerializedSize {
+    get {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+      return CalcSerializedSize();
+    }
+  }
+  
+  private int CalcSerializedSize() {
+    int size = memoizedSerializedSize;
+    if (size != -1) return size;
+    
+    size = 0;
+    if (hasPage) {
+      size += pb::CodedOutputStream.ComputeMessageSize(1, Page);
+    }
+    if (hasCategory) {
+      size += pb::CodedOutputStream.ComputeInt32Size(2, Category);
+    }
+    if (hasKeywords) {
+      size += pb::CodedOutputStream.ComputeStringSize(4, Keywords);
+    }
+    size += UnknownFields.SerializedSize;
+    memoizedSerializedSize = size;
+    return size;
+  }
+  public static CSGoodsFind ParseFrom(pb::ByteString data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static CSGoodsFind ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static CSGoodsFind ParseFrom(byte[] data) {
+    return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
+  }
+  public static CSGoodsFind ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
+  }
+  public static CSGoodsFind ParseFrom(global::System.IO.Stream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static CSGoodsFind ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  public static CSGoodsFind ParseDelimitedFrom(global::System.IO.Stream input) {
+    return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
+  }
+  public static CSGoodsFind ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+    return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
+  }
+  public static CSGoodsFind ParseFrom(pb::ICodedInputStream input) {
+    return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
+  }
+  public static CSGoodsFind ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+    return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
+  }
+  private CSGoodsFind MakeReadOnly() {
+    return this;
+  }
+  
+  public static Builder CreateBuilder() { return new Builder(); }
+  public override Builder ToBuilder() { return CreateBuilder(this); }
+  public override Builder CreateBuilderForType() { return new Builder(); }
+  public static Builder CreateBuilder(CSGoodsFind prototype) {
+    return new Builder(prototype);
+  }
+  
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+  public sealed partial class Builder : pb::GeneratedBuilder<CSGoodsFind, Builder> {
+    protected override Builder ThisBuilder {
+      get { return this; }
+    }
+    public Builder() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+    }
+    internal Builder(CSGoodsFind cloneFrom) {
+      result = cloneFrom;
+      resultIsReadOnly = true;
+    }
+    
+    private bool resultIsReadOnly;
+    private CSGoodsFind result;
+    
+    private CSGoodsFind PrepareBuilder() {
+      if (resultIsReadOnly) {
+        CSGoodsFind original = result;
+        result = new CSGoodsFind();
+        resultIsReadOnly = false;
+        MergeFrom(original);
+      }
+      return result;
+    }
+    
+    public override bool IsInitialized {
+      get { return result.IsInitialized; }
+    }
+    
+    protected override CSGoodsFind MessageBeingBuilt {
+      get { return PrepareBuilder(); }
+    }
+    
+    public override Builder Clear() {
+      result = DefaultInstance;
+      resultIsReadOnly = true;
+      return this;
+    }
+    
+    public override Builder Clone() {
+      if (resultIsReadOnly) {
+        return new Builder(result);
+      } else {
+        return new Builder().MergeFrom(result);
+      }
+    }
+    
+    public override pbd::MessageDescriptor DescriptorForType {
+      get { return global::CSGoodsFind.Descriptor; }
+    }
+    
+    public override CSGoodsFind DefaultInstanceForType {
+      get { return global::CSGoodsFind.DefaultInstance; }
+    }
+    
+    public override CSGoodsFind BuildPartial() {
+      if (resultIsReadOnly) {
+        return result;
+      }
+      resultIsReadOnly = true;
+      return result.MakeReadOnly();
+    }
+    
+    public override Builder MergeFrom(pb::IMessage other) {
+      if (other is CSGoodsFind) {
+        return MergeFrom((CSGoodsFind) other);
+      } else {
+        base.MergeFrom(other);
+        return this;
+      }
+    }
+    
+    public override Builder MergeFrom(CSGoodsFind other) {
+      if (other == global::CSGoodsFind.DefaultInstance) return this;
+      PrepareBuilder();
+      if (other.HasPage) {
+        MergePage(other.Page);
+      }
+      if (other.HasCategory) {
+        Category = other.Category;
+      }
+      if (other.HasKeywords) {
+        Keywords = other.Keywords;
+      }
+      this.MergeUnknownFields(other.UnknownFields);
+      return this;
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input) {
+      return MergeFrom(input, pb::ExtensionRegistry.Empty);
+    }
+    
+    public override Builder MergeFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+      PrepareBuilder();
+      pb::UnknownFieldSet.Builder unknownFields = null;
+      uint tag;
+      string field_name;
+      while (input.ReadTag(out tag, out field_name)) {
+        if(tag == 0 && field_name != null) {
+          int field_ordinal = global::System.Array.BinarySearch(_cSGoodsFindFieldNames, field_name, global::System.StringComparer.Ordinal);
+          if(field_ordinal >= 0)
+            tag = _cSGoodsFindFieldTags[field_ordinal];
+          else {
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            continue;
+          }
+        }
+        switch (tag) {
+          case 0: {
+            throw pb::InvalidProtocolBufferException.InvalidTag();
+          }
+          default: {
+            if (pb::WireFormat.IsEndGroupTag(tag)) {
+              if (unknownFields != null) {
+                this.UnknownFields = unknownFields.Build();
+              }
+              return this;
+            }
+            if (unknownFields == null) {
+              unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
+            }
+            ParseUnknownField(input, unknownFields, extensionRegistry, tag, field_name);
+            break;
+          }
+          case 10: {
+            global::StructPage.Builder subBuilder = global::StructPage.CreateBuilder();
+            if (result.hasPage) {
+              subBuilder.MergeFrom(Page);
+            }
+            input.ReadMessage(subBuilder, extensionRegistry);
+            Page = subBuilder.BuildPartial();
+            break;
+          }
+          case 16: {
+            result.hasCategory = input.ReadInt32(ref result.category_);
+            break;
+          }
+          case 34: {
+            result.hasKeywords = input.ReadString(ref result.keywords_);
+            break;
+          }
+        }
+      }
+      
+      if (unknownFields != null) {
+        this.UnknownFields = unknownFields.Build();
+      }
+      return this;
+    }
+    
+    
+    public bool HasPage {
+     get { return result.hasPage; }
+    }
+    public global::StructPage Page {
+      get { return result.Page; }
+      set { SetPage(value); }
+    }
+    public Builder SetPage(global::StructPage value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasPage = true;
+      result.page_ = value;
+      return this;
+    }
+    public Builder SetPage(global::StructPage.Builder builderForValue) {
+      pb::ThrowHelper.ThrowIfNull(builderForValue, "builderForValue");
+      PrepareBuilder();
+      result.hasPage = true;
+      result.page_ = builderForValue.Build();
+      return this;
+    }
+    public Builder MergePage(global::StructPage value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      if (result.hasPage &&
+          result.page_ != global::StructPage.DefaultInstance) {
+          result.page_ = global::StructPage.CreateBuilder(result.page_).MergeFrom(value).BuildPartial();
+      } else {
+        result.page_ = value;
+      }
+      result.hasPage = true;
+      return this;
+    }
+    public Builder ClearPage() {
+      PrepareBuilder();
+      result.hasPage = false;
+      result.page_ = null;
+      return this;
+    }
+    
+    public bool HasCategory {
+      get { return result.hasCategory; }
+    }
+    public int Category {
+      get { return result.Category; }
+      set { SetCategory(value); }
+    }
+    public Builder SetCategory(int value) {
+      PrepareBuilder();
+      result.hasCategory = true;
+      result.category_ = value;
+      return this;
+    }
+    public Builder ClearCategory() {
+      PrepareBuilder();
+      result.hasCategory = false;
+      result.category_ = 0;
+      return this;
+    }
+    
+    public bool HasKeywords {
+      get { return result.hasKeywords; }
+    }
+    public string Keywords {
+      get { return result.Keywords; }
+      set { SetKeywords(value); }
+    }
+    public Builder SetKeywords(string value) {
+      pb::ThrowHelper.ThrowIfNull(value, "value");
+      PrepareBuilder();
+      result.hasKeywords = true;
+      result.keywords_ = value;
+      return this;
+    }
+    public Builder ClearKeywords() {
+      PrepareBuilder();
+      result.hasKeywords = false;
+      result.keywords_ = "";
+      return this;
+    }
+  }
+  static CSGoodsFind() {
+    object.ReferenceEquals(global::ClientProtocol.Descriptor, null);
+  }
+}
+
+[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+public sealed partial class SCGoodsFind : pb::GeneratedMessage<SCGoodsFind, SCGoodsFind.Builder> {
+  private SCGoodsFind() { }
+  private static readonly SCGoodsFind defaultInstance = new SCGoodsFind().MakeReadOnly();
+  private static readonly string[] _sCGoodsFindFieldNames = new string[] { "goods" };
+  private static readonly uint[] _sCGoodsFindFieldTags = new uint[] { 10 };
+  public static SCGoodsFind DefaultInstance {
+    get { return defaultInstance; }
+  }
+  
+  public override SCGoodsFind DefaultInstanceForType {
+    get { return DefaultInstance; }
+  }
+  
+  protected override SCGoodsFind ThisMessage {
+    get { return this; }
+  }
+  
+  public static pbd::MessageDescriptor Descriptor {
+    get { return global::ClientProtocol.internal__static_SCGoodsFind__Descriptor; }
+  }
+  
+  protected override pb::FieldAccess.FieldAccessorTable<SCGoodsFind, SCGoodsFind.Builder> InternalFieldAccessors {
+    get { return global::ClientProtocol.internal__static_SCGoodsFind__FieldAccessorTable; }
   }
   
   public const int GoodsFieldNumber = 1;
@@ -6338,7 +6807,7 @@ public sealed partial class SCShop : pb::GeneratedMessage<SCShop, SCShop.Builder
   
   public override void WriteTo(pb::ICodedOutputStream output) {
     CalcSerializedSize();
-    string[] field_names = _sCShopFieldNames;
+    string[] field_names = _sCGoodsFindFieldNames;
     if (goods_.Count > 0) {
       output.WriteMessageArray(1, field_names[0], goods_);
     }
@@ -6366,37 +6835,37 @@ public sealed partial class SCShop : pb::GeneratedMessage<SCShop, SCShop.Builder
     memoizedSerializedSize = size;
     return size;
   }
-  public static SCShop ParseFrom(pb::ByteString data) {
+  public static SCGoodsFind ParseFrom(pb::ByteString data) {
     return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
   }
-  public static SCShop ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
+  public static SCGoodsFind ParseFrom(pb::ByteString data, pb::ExtensionRegistry extensionRegistry) {
     return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
   }
-  public static SCShop ParseFrom(byte[] data) {
+  public static SCGoodsFind ParseFrom(byte[] data) {
     return ((Builder) CreateBuilder().MergeFrom(data)).BuildParsed();
   }
-  public static SCShop ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
+  public static SCGoodsFind ParseFrom(byte[] data, pb::ExtensionRegistry extensionRegistry) {
     return ((Builder) CreateBuilder().MergeFrom(data, extensionRegistry)).BuildParsed();
   }
-  public static SCShop ParseFrom(global::System.IO.Stream input) {
+  public static SCGoodsFind ParseFrom(global::System.IO.Stream input) {
     return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
   }
-  public static SCShop ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+  public static SCGoodsFind ParseFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
     return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
   }
-  public static SCShop ParseDelimitedFrom(global::System.IO.Stream input) {
+  public static SCGoodsFind ParseDelimitedFrom(global::System.IO.Stream input) {
     return CreateBuilder().MergeDelimitedFrom(input).BuildParsed();
   }
-  public static SCShop ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
+  public static SCGoodsFind ParseDelimitedFrom(global::System.IO.Stream input, pb::ExtensionRegistry extensionRegistry) {
     return CreateBuilder().MergeDelimitedFrom(input, extensionRegistry).BuildParsed();
   }
-  public static SCShop ParseFrom(pb::ICodedInputStream input) {
+  public static SCGoodsFind ParseFrom(pb::ICodedInputStream input) {
     return ((Builder) CreateBuilder().MergeFrom(input)).BuildParsed();
   }
-  public static SCShop ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
+  public static SCGoodsFind ParseFrom(pb::ICodedInputStream input, pb::ExtensionRegistry extensionRegistry) {
     return ((Builder) CreateBuilder().MergeFrom(input, extensionRegistry)).BuildParsed();
   }
-  private SCShop MakeReadOnly() {
+  private SCGoodsFind MakeReadOnly() {
     goods_.MakeReadOnly();
     return this;
   }
@@ -6404,12 +6873,12 @@ public sealed partial class SCShop : pb::GeneratedMessage<SCShop, SCShop.Builder
   public static Builder CreateBuilder() { return new Builder(); }
   public override Builder ToBuilder() { return CreateBuilder(this); }
   public override Builder CreateBuilderForType() { return new Builder(); }
-  public static Builder CreateBuilder(SCShop prototype) {
+  public static Builder CreateBuilder(SCGoodsFind prototype) {
     return new Builder(prototype);
   }
   
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-  public sealed partial class Builder : pb::GeneratedBuilder<SCShop, Builder> {
+  public sealed partial class Builder : pb::GeneratedBuilder<SCGoodsFind, Builder> {
     protected override Builder ThisBuilder {
       get { return this; }
     }
@@ -6417,18 +6886,18 @@ public sealed partial class SCShop : pb::GeneratedMessage<SCShop, SCShop.Builder
       result = DefaultInstance;
       resultIsReadOnly = true;
     }
-    internal Builder(SCShop cloneFrom) {
+    internal Builder(SCGoodsFind cloneFrom) {
       result = cloneFrom;
       resultIsReadOnly = true;
     }
     
     private bool resultIsReadOnly;
-    private SCShop result;
+    private SCGoodsFind result;
     
-    private SCShop PrepareBuilder() {
+    private SCGoodsFind PrepareBuilder() {
       if (resultIsReadOnly) {
-        SCShop original = result;
-        result = new SCShop();
+        SCGoodsFind original = result;
+        result = new SCGoodsFind();
         resultIsReadOnly = false;
         MergeFrom(original);
       }
@@ -6439,7 +6908,7 @@ public sealed partial class SCShop : pb::GeneratedMessage<SCShop, SCShop.Builder
       get { return result.IsInitialized; }
     }
     
-    protected override SCShop MessageBeingBuilt {
+    protected override SCGoodsFind MessageBeingBuilt {
       get { return PrepareBuilder(); }
     }
     
@@ -6458,14 +6927,14 @@ public sealed partial class SCShop : pb::GeneratedMessage<SCShop, SCShop.Builder
     }
     
     public override pbd::MessageDescriptor DescriptorForType {
-      get { return global::SCShop.Descriptor; }
+      get { return global::SCGoodsFind.Descriptor; }
     }
     
-    public override SCShop DefaultInstanceForType {
-      get { return global::SCShop.DefaultInstance; }
+    public override SCGoodsFind DefaultInstanceForType {
+      get { return global::SCGoodsFind.DefaultInstance; }
     }
     
-    public override SCShop BuildPartial() {
+    public override SCGoodsFind BuildPartial() {
       if (resultIsReadOnly) {
         return result;
       }
@@ -6474,16 +6943,16 @@ public sealed partial class SCShop : pb::GeneratedMessage<SCShop, SCShop.Builder
     }
     
     public override Builder MergeFrom(pb::IMessage other) {
-      if (other is SCShop) {
-        return MergeFrom((SCShop) other);
+      if (other is SCGoodsFind) {
+        return MergeFrom((SCGoodsFind) other);
       } else {
         base.MergeFrom(other);
         return this;
       }
     }
     
-    public override Builder MergeFrom(SCShop other) {
-      if (other == global::SCShop.DefaultInstance) return this;
+    public override Builder MergeFrom(SCGoodsFind other) {
+      if (other == global::SCGoodsFind.DefaultInstance) return this;
       PrepareBuilder();
       if (other.goods_.Count != 0) {
         result.goods_.Add(other.goods_);
@@ -6503,9 +6972,9 @@ public sealed partial class SCShop : pb::GeneratedMessage<SCShop, SCShop.Builder
       string field_name;
       while (input.ReadTag(out tag, out field_name)) {
         if(tag == 0 && field_name != null) {
-          int field_ordinal = global::System.Array.BinarySearch(_sCShopFieldNames, field_name, global::System.StringComparer.Ordinal);
+          int field_ordinal = global::System.Array.BinarySearch(_sCGoodsFindFieldNames, field_name, global::System.StringComparer.Ordinal);
           if(field_ordinal >= 0)
-            tag = _sCShopFieldTags[field_ordinal];
+            tag = _sCGoodsFindFieldTags[field_ordinal];
           else {
             if (unknownFields == null) {
               unknownFields = pb::UnknownFieldSet.CreateBuilder(this.UnknownFields);
@@ -6589,7 +7058,7 @@ public sealed partial class SCShop : pb::GeneratedMessage<SCShop, SCShop.Builder
       return this;
     }
   }
-  static SCShop() {
+  static SCGoodsFind() {
     object.ReferenceEquals(global::ClientProtocol.Descriptor, null);
   }
 }

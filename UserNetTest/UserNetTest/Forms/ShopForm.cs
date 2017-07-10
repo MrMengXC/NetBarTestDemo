@@ -60,13 +60,13 @@ namespace UserNetTest.Forms
         //进入商店获取商品列表
         private void GoShop()
         {
-            ClientNetOperation.GoShop(model.manage, GoShopResult);
+            ClientNetOperation.GoShop(model.manage, GoShopResult,1002,"");
         }
 
         //进入商店结果回调
         private void GoShopResult(ResultModel result)
         {
-            if(result.pack.Cmd != Cmd.CMD_CLIENT_SHOP)
+            if(result.pack.Cmd != Cmd.CMD_GOODS_FIND)
             {
                 return;
             }
@@ -76,7 +76,12 @@ namespace UserNetTest.Forms
 
             if(result.pack.Content.MessageType == 1)
             {
+                this.Invoke(new UIHandleBlock(delegate () {
+                    this.goods = result.pack.Content.ScGoodsFind.GoodsList;
 
+                    RefreshGridControl();
+
+                }));
             }
 
 
@@ -86,15 +91,19 @@ namespace UserNetTest.Forms
         private void RefreshGridControl()
         {
             this.mainTable.Rows.Clear();
-
+            foreach(StructGoods goods in this.goods)
+            {
+                AddNewRow(goods);
+            }
 
 
         }
         //添加新行
-        private void AddNewRow(StructGoods good)
+        private void AddNewRow(StructGoods goods)
         {
             DataRow row = this.mainTable.NewRow();
             this.mainTable.Rows.Add(row);
+            row[TitleList.Name.ToString()] = goods.GoodsName;
         }
         #region 设置GridView
         private void SetColumn(ColumnType type,string fieldname,string columnname,string[] buttonNames)
@@ -223,7 +232,7 @@ namespace UserNetTest.Forms
             model.manage.RemoveResultBlock(PreBuyProductResult);
             if(result.pack.Content.MessageType == 1)
             {
-
+                MessageBox.Show("购买成功");
             }
 
         }

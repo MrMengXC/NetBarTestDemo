@@ -180,6 +180,9 @@ namespace UserNetTest
                         SimpleButton buy = this.InitOpenButton("购买", Purchase);
                         this.panel4.Controls.Add(buy);
 
+                        SimpleButton error = this.InitOpenButton("客户端报错", Error);
+                        this.panel4.Controls.Add(error);
+
                         this.cardLabel.Text = model.card;
                         this.MessageLabel.Text = "已扣金额 " + model.usebalance + " 元";
                     }
@@ -532,6 +535,7 @@ namespace UserNetTest
 
         }
         #endregion
+
         #region 购买
         private void Purchase(object sender, EventArgs e)
         {
@@ -540,10 +544,22 @@ namespace UserNetTest
             ShopForm form = new ShopForm(model);
             form.ShowInTaskbar = false;
             form.StartPosition = FormStartPosition.CenterParent;
-            form.ShowDialog();
+            form.ShowDialog(); 
 
         }
         #endregion
+
+        #region 报错
+        private void Error(object sender, EventArgs e)
+        {
+            int index = this.panel1.Controls.GetChildIndex(this.selectButton);
+            SimpleModel model = this.GetModel(index);
+            
+
+        }
+        #endregion
+
+
         #endregion
 
         #region Panel Size 改变
